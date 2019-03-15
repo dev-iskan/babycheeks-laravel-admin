@@ -20,7 +20,7 @@ class LoginController extends Controller
 
         return (new UserResource($request->user()))->additional([
             'meta' => [
-                'token' => $token
+                'access_token' => $token
             ]
         ]);
     }
