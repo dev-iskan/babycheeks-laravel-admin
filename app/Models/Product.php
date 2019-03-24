@@ -5,7 +5,7 @@ namespace App\Models;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 
-class Brand extends Model
+class Product extends Model
 {
     use Sluggable;
 
@@ -20,9 +20,15 @@ class Brand extends Model
 
     protected $fillable = [
         'name',
+        'description',
+        'gender'
     ];
 
-    public function products() {
-        return $this->belongsToMany(Product::class)->withTimestamps();
+    public function categories() {
+        return $this->belongsToMany(Category::class)->withTimestamps();
+    }
+
+    public function brands() {
+        return $this->belongsToMany(Brand::class)->withTimestamps();
     }
 }
