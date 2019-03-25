@@ -4,12 +4,10 @@ namespace App\Models;
 
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\MediaLibrary\HasMedia\HasMedia;
-use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 
-class Brand extends Model implements HasMedia
+class Brand extends Model
 {
-    use Sluggable, HasMediaTrait;
+    use Sluggable;
 
     public function sluggable()
     {

@@ -16,3 +16,11 @@ Route::group(['namespace' => 'Auth', 'prefix' => 'auth'],function () {
     Route::post('/login', 'LoginController');
     Route::get('/me', 'MeController');
 });
+
+
+Route::group(['namespace'=>'Admin', 'prefix' => 'admin'], function () {
+    Route::resource('/categories', 'CategoryController', ['as'=>'admin']);
+    Route::resource('/ages', 'AgeController', ['as'=>'admin']);
+    Route::resource('/brands', 'BrandController', ['as'=>'admin']);
+    Route::resource('/products', 'ProductController', ['as'=>'admin']);
+});
