@@ -21,10 +21,10 @@ class Brand extends Model implements HasMedia
     }
 
     protected $fillable = [
-        'name',
+        'name'
     ];
 
     public function products() {
-        return $this->belongsToMany(Product::class)->withTimestamps();
+        return $this->hasMany(Product::class);
     }
 }

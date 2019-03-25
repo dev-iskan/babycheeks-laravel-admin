@@ -11,8 +11,8 @@ class ProductTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Models\Product::class, 5000)->create()->each(function (\App\Models\Product $product) {
-            $product->brands()->attach(\App\Models\Brand::all()->random(3));
+        factory(\App\Models\Product::class, 1000)->create()->each(function (\App\Models\Product $product) {
+            $product->brand()->associate(\App\Models\Brand::inRandomOrder()->first())->save();
             $product->categories()->attach(\App\Models\Category::all()->random(3));
         });
     }
