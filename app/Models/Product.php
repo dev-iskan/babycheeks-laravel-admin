@@ -30,6 +30,10 @@ class Product extends Model implements HasMedia
         return $this->belongsToMany(Category::class)->withTimestamps();
     }
 
+    public function ages() {
+        return $this->belongsToMany(Age::class)->withTimestamps();
+    }
+
     public function brand() {
         return $this->belongsTo(Brand::class);
     }
