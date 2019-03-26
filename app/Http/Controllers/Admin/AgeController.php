@@ -10,7 +10,6 @@ use App\Http\Controllers\Controller;
 
 class AgeController extends Controller
 {
-
     public function index()
     {
         return AgeResource::collection(Age::all());
