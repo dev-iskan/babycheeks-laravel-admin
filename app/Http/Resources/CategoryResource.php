@@ -20,6 +20,7 @@ class CategoryResource extends JsonResource
             'slug' => $this->slug,
             'description' => $this->description,
             'children' => CategoryResource::collection($this->whenLoaded('children')),
+            'image' => $this->getFirstMedia('categories')->getFullUrl()
 //            'created_at' => $this->created_at->toW3cString()
         ];
     }

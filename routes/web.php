@@ -15,16 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/test', function () {
-    $product = \App\Models\Product::find(1);
-    $image = $product->getFirstMedia('products');
+    $category = \App\Models\Category::find(1);
+    $image = $category->getFirstMedia('categories');
 //    $rendered = view('render', compact('image'))->render();
 //    dd($rendered);
     return view('test', compact('image'));
 });
 Route::post('/test', function (\Illuminate\Http\Request $request) {
     if($request->hasFile('image')) {
-        $product=\App\Models\Product::find(1);
-        $product->addMediaFromRequest('image')->withResponsiveImages()->toMediaCollection('products');
+        $category =\App\Models\Category::find(1);
+        $category->addMedia($request->file('image'))->withResponsiveImages()->toMediaCollection('categories');
     }
     return redirect()->back();
 })->name('post_image');
