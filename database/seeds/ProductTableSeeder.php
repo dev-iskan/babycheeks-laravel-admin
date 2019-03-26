@@ -13,8 +13,8 @@ class ProductTableSeeder extends Seeder
     {
         factory(\App\Models\Product::class, 500)->create()->each(function (\App\Models\Product $product) {
             $product->brand()->associate(\App\Models\Brand::inRandomOrder()->first())->save();
-            $product->ages()->attach(\App\Models\Age::all()->random(4));
-            $product->categories()->attach(\App\Models\Category::all()->random(3));
+            $product->ages()->attach(\App\Models\Age::all()->random(3));
+            $product->categories()->attach(\App\Models\Category::all()->random(2));
         });
     }
 }

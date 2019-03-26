@@ -19,8 +19,8 @@ Route::group(['namespace' => 'Auth', 'prefix' => 'auth'],function () {
 
 
 Route::group(['namespace'=>'Admin', 'prefix' => 'admin'], function () {
-    Route::resource('/categories', 'CategoryController', ['as'=>'admin']);
-    Route::resource('/ages', 'AgeController', ['as'=>'admin']);
-    Route::resource('/brands', 'BrandController', ['as'=>'admin']);
-    Route::resource('/products', 'ProductController', ['as'=>'admin']);
+    Route::resource('/categories', 'CategoryController', ['as'=>'admin'])->only(['index', 'show', 'store', 'update', 'destroy']);
+    Route::resource('/ages', 'AgeController', ['as'=>'admin'])->only(['index', 'show', 'store', 'update', 'destroy']);
+    Route::resource('/brands', 'BrandController', ['as'=>'admin'])->only(['index', 'show', 'store', 'update', 'destroy']);
+    Route::resource('/products', 'ProductController', ['as'=>'admin'])->only(['index', 'show', 'store', 'update', 'destroy']);
 });
