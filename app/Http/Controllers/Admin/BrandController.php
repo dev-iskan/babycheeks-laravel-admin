@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\BrandRequest;
+use App\Http\Requests\Brands\StoreBrandRequest;
+use App\Http\Requests\Brands\UpdateBrandRequest;
 use App\Models\Brand;
 use App\Http\Resources\BrandResource;
 
@@ -14,7 +15,7 @@ class BrandController extends Controller
         return BrandResource::collection(Brand::all());
     }
 
-    public function store(BrandRequest $request)
+    public function store(StoreBrandRequest $request)
     {
         Brand::create($request->only('name'));
         return response()->json(['status' => 'Successfully created!'],201);
@@ -25,7 +26,7 @@ class BrandController extends Controller
         return new BrandResource($brand);
     }
 
-    public function update(BrandRequest $request, Brand $brand)
+    public function update(UpdateBrandRequest $request, Brand $brand)
     {
         $brand->update($request->only('name'));
         return response()->json(['status' => 'Successfully updated!'], 200);

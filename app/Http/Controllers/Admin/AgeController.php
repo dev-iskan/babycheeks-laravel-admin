@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-
-use App\Http\Requests\AgeRequest;
+use App\Http\Requests\Ages\StoreAgeRequest;
+use App\Http\Requests\Ages\UpdateAgeRequest;
 use App\Http\Resources\AgeResource;
 use App\Models\Age;
 use App\Http\Controllers\Controller;
@@ -15,7 +15,7 @@ class AgeController extends Controller
         return AgeResource::collection(Age::all());
     }
 
-    public function store(AgeRequest $request)
+    public function store(StoreAgeRequest $request)
     {
         Age::create($request->only('age'));
         return response()->json(['status' => 'Successfully created!'],201);
@@ -26,7 +26,7 @@ class AgeController extends Controller
         return new AgeResource($age);
     }
 
-    public function update(AgeRequest $request, Age $age)
+    public function update(UpdateAgeRequest $request, Age $age)
     {
         $age->update($request->only('age'));
         return response()->json(['status' => 'Successfully updated!'], 200);

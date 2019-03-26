@@ -1,10 +1,8 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Ages;
 
-use Illuminate\Foundation\Http\FormRequest;
-
-class AgeRequest extends FormRequest
+class UpdateAgeRequest extends StoreAgeRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,8 +21,6 @@ class AgeRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'age' => 'required|max:250'
-        ];
+        return parent::rules();
     }
 }

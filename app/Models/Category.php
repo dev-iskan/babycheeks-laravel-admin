@@ -23,13 +23,27 @@ class Category extends Model implements HasMedia
 
     protected $fillable = [
         'name',
+        'description'
     ];
 
     public function children () {
         return $this->hasMany(Category::class, 'parent_id', 'id');
     }
 
+    public function parent () {
+        return $this->belongsTo(Category::class, 'parent_id');
+    }
+
     public function products() {
         return $this->belongsToMany(Product::class)->withTimestamps();
+    }
+
+    public function setParent($id) {
+
+        if($id === null) {
+            $this->parent()->dissociate()->save();
+            return;
+        }
+        $this->parent()->associate($id)->save();
     }
 }
