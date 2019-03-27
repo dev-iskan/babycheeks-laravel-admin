@@ -21,6 +21,10 @@ class Product extends Model implements HasMedia
         ];
     }
 
+    public function getRouteKeyName () {
+        return 'slug';
+    }
+
     protected $fillable = [
         'name',
         'description',
@@ -64,6 +68,35 @@ class Product extends Model implements HasMedia
         return [
             'name' => $this->name,
             'description' => $this->description,
+        ];
+    }
+
+    public function getDisplayableColumns() {
+        return [
+            [
+                'text' => "Id",
+                "value" => "id"
+            ],
+            [
+                'text' => "Name",
+                "value" => "name"
+            ],
+            [
+                'text' => "Slug",
+                "value" => "slug"
+            ],
+            [
+                'text' => "Gender",
+                "value" => "gender"
+            ],
+            [
+                'text' => "Brand",
+                "value" => "brand"
+            ],
+            [
+                'text' => "Created At",
+                "value" => "created_at"
+            ]
         ];
     }
 }

@@ -14,9 +14,13 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return ProductResource::collection(
-            Product::with(['brand', 'ages', 'categories', 'media'])->get()
-        );
+        return ProductResource::collection(Product::with(['brand'])->get())->additional([
+            'meta' => [
+                'displayableColumns'=>Product::getModel()->getDisplayableColumns(),
+                'table' => Product::getModel()->getTable(),
+                'routeKey' => Product::getModel()->getRouteKeyName()
+            ]
+        ]);
     }
 
     public function store(StoreProductRequest $request)

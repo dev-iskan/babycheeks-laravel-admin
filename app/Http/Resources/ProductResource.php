@@ -18,16 +18,17 @@ class ProductResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'slug' => $this->slug,
+            'gender' => $this->gender,
             'description' => $this->description,
             'ages' => AgeResource::collection($this->whenLoaded('ages')),
-            'brand' => new BrandResource($this->whenLoaded('brand')),
+            'brand' => $this->brand()->exists() ? $this->brand->name : 'No brand',
             'categories' => CategoryResource::collection($this->whenLoaded('categories')),
             'images' => $this->whenLoaded('media', function () {
                 return $this->getMedia($this->getTable())->map(function ($image) {
                     return $image->getFullUrl();
                 });
-            })
-//            'created_at' => $this->created_at->toW3cString()
+            }),
+            'created_at' => $this->created_at->toDateTimeString()
         ];
     }
 }
