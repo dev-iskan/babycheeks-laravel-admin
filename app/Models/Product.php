@@ -37,4 +37,20 @@ class Product extends Model implements HasMedia
     public function brand() {
         return $this->belongsTo(Brand::class);
     }
+
+    public function setBrand($id) {
+        if($id === null) {
+            $this->brand()->dissociate()->save();
+            return;
+        }
+        $this->brand()->associate($id)->save();
+    }
+
+    public function syncAges(array $ids) {
+        $this->ages()->sync($ids);
+    }
+
+    public function syncCategories(array $ids) {
+        $this->categories()->sync($ids);
+    }
 }

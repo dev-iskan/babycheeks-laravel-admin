@@ -13,7 +13,7 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        return CategoryResource::collection(Category::with(['children'])->get());
+        return CategoryResource::collection(Category::with(['children', 'media'])->get());
     }
 
     public function store(StoreCategoryRequest $request)
@@ -22,13 +22,13 @@ class CategoryController extends Controller
         $category->setParent($request->parent_id);
 
         $image_service = new ImageService($category);
-        $image_service->addModelImage($request);
+        $image_service->addModelImages($request);
         return response()->json(['status' => 'Successfully created!'],201);
     }
 
     public function show(Category $category)
     {
-        return new CategoryResource($category);
+        return new CategoryResource($category->load('children','media'));
     }
 
     public function update(UpdateCategoryRequest $request, Category $category)
@@ -37,7 +37,7 @@ class CategoryController extends Controller
         $category->setParent($request->parent_id);
 
         $image_service = new ImageService($category);
-        $image_service->updateModelImage($request);
+        $image_service->updateModelImages($request);
         return response()->json(['status' => 'Successfully updated!'], 200);
     }
 

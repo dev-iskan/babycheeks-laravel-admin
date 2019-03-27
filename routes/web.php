@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/test', function () {
-    $category = \App\Models\Category::find(1);
+    $category = \App\Models\Category::find(114);
     $image = $category->getFirstMedia('categories');
 //    $rendered = view('render', compact('image'))->render();
 //    dd($rendered);

@@ -13,19 +13,27 @@ class ImageService {
         $this->model=$model;
     }
 
-    public function addModelImage(Request $request) {
-        if(!$request->hasFile('image')) {
-            return;
+    public function addModelImages(Request $request) {
+        if($request->hasFile('image') && $request->file('image')->isValid()) {
+            $this->addMedia();
         }
-        $this->addMedia();
+
+        if($request->has('images')) {
+            $this->addMultipleMedia();
+        }
+
     }
 
-    public function updateModelImage(Request $request) {
-        if(!$request->hasFile('image')) {
-            return;
+    public function updateModelImages(Request $request) {
+        if($request->hasFile('image') && $request->file('image')->isValid()) {
+            $this->deleteModelImages();
+            $this->addMedia();
         }
-        $this->deleteModelImages();
-        $this->addMedia();
+
+        if($request->has('images')) {
+            $this->deleteModelImages();
+            $this->addMultipleMedia();
+        }
     }
 
     public function deleteModelImages () {
@@ -38,5 +46,14 @@ class ImageService {
         $this->model->addMediaFromRequest('image')
             ->withResponsiveImages()
             ->toMediaCollection($this->model->getTable());
+    }
+
+    protected function addMultipleMedia(){
+        $this->model->addMultipleMediaFromRequest(["images"])
+            ->each(function ($fileAdder) {
+                $fileAdder
+                ->withResponsiveImages()
+                ->toMediaCollection($this->model->getTable());
+            });
     }
 }

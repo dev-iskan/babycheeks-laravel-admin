@@ -20,7 +20,9 @@ class CategoryResource extends JsonResource
             'slug' => $this->slug,
             'description' => $this->description,
             'children' => CategoryResource::collection($this->whenLoaded('children')),
-            'image' => $this->getFirstMedia('categories')->getFullUrl()
+            'image' => $this->whenLoaded('media', function () {
+                return $this->getFirstMedia($this->getTable()) ? $this->getFirstMedia($this->getTable())->getFullUrl() : null;
+            })
 //            'created_at' => $this->created_at->toW3cString()
         ];
     }
