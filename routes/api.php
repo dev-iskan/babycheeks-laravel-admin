@@ -24,3 +24,6 @@ Route::group(['namespace'=>'Admin', 'prefix' => 'admin'], function () {
     Route::resource('/brands', 'BrandController', ['as'=>'admin'])->only(['index', 'show', 'store', 'update', 'destroy']);
     Route::resource('/products', 'ProductController', ['as'=>'admin'])->only(['index', 'show', 'store', 'update', 'destroy']);
 });
+
+
+Route::get('/search', 'Api\ElasticSearchController@search');

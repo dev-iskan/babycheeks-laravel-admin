@@ -4,12 +4,13 @@ namespace App\Models;
 
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 
 class Product extends Model implements HasMedia
 {
-    use Sluggable, HasMediaTrait;
+    use Sluggable, HasMediaTrait, Searchable;
 
     public function sluggable()
     {
@@ -52,5 +53,17 @@ class Product extends Model implements HasMedia
 
     public function syncCategories(array $ids) {
         $this->categories()->sync($ids);
+    }
+
+    public function searchableFields() {
+        return ['name', 'description'];
+    }
+
+    public function toSearchableArray()
+    {
+        return [
+            'name' => $this->name,
+            'description' => $this->description,
+        ];
     }
 }

@@ -1,0 +1,4 @@
+1. php artisan scout:elasticsearch:create App\\Models\\Product    - create indexes for given model
+2. php artisan scout:import App\\Models\\Product     - import data from given model's table
+3. php artisan scout:flush      - flush all data from indexes
+4. IMPORTANT should work queue
