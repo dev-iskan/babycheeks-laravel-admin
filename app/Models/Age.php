@@ -13,4 +13,21 @@ class Age extends Model
     public function products() {
         return $this->belongsToMany(Product::class)->withTimestamps();
     }
+
+    public function getDisplayableColumns() {
+        return [
+            [
+                'text' => "Id",
+                "value" => "id"
+            ],
+            [
+                'text' => "Age",
+                "value" => "age"
+            ],
+            [
+                'text' => "Created At",
+                "value" => "created_at"
+            ]
+        ];
+    }
 }

@@ -17,7 +17,7 @@ class AgeResource extends JsonResource
         return [
             'id' => $this->id,
             'age' => $this->age,
-//            'created_at' => $this->created_at->toW3cString()
+            'created_at' => $this->created_at->toDateTimeString()
         ];
     }
 }

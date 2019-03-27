@@ -12,7 +12,11 @@ class AgeController extends Controller
 {
     public function index()
     {
-        return AgeResource::collection(Age::all());
+        return AgeResource::collection(Age::all())->additional([
+            'meta' => [
+                'displayableColumns'=>Age::getModel()->getDisplayableColumns()
+            ]
+        ]);
     }
 
     public function store(StoreAgeRequest $request)
