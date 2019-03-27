@@ -12,7 +12,13 @@ class BrandController extends Controller
 {
     public function index()
     {
-        return BrandResource::collection(Brand::all());
+        return BrandResource::collection(Brand::all())->additional([
+            'meta' => [
+                'displayableColumns'=>Brand::getModel()->getDisplayableColumns(),
+                'table' => Brand::getModel()->getTable(),
+                'routeKey' => Brand::getModel()->getRouteKeyName()
+            ]
+        ]);
     }
 
     public function store(StoreBrandRequest $request)

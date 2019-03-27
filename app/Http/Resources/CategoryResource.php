@@ -19,11 +19,11 @@ class CategoryResource extends JsonResource
             'name' => $this->name,
             'slug' => $this->slug,
             'description' => $this->description,
-            'children' => CategoryResource::collection($this->whenLoaded('children')),
+            'parent' => $this->parent()->exists() ? $this->parent->name : 'No parent',
             'image' => $this->whenLoaded('media', function () {
                 return $this->getFirstMedia($this->getTable()) ? $this->getFirstMedia($this->getTable())->getFullUrl() : null;
-            })
-//            'created_at' => $this->created_at->toW3cString()
+            }),
+            'created_at' => $this->created_at->toDateTimeString()
         ];
     }
 }

@@ -14,7 +14,9 @@ class AgeController extends Controller
     {
         return AgeResource::collection(Age::all())->additional([
             'meta' => [
-                'displayableColumns'=>Age::getModel()->getDisplayableColumns()
+                'displayableColumns'=>Age::getModel()->getDisplayableColumns(),
+                'table' => Age::getModel()->getTable(),
+                'routeKey' => Age::getModel()->getRouteKeyName()
             ]
         ]);
     }

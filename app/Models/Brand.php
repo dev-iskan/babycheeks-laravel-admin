@@ -18,11 +18,36 @@ class Brand extends Model
         ];
     }
 
+    public function getRouteKeyName () {
+        return 'slug';
+    }
+
     protected $fillable = [
         'name'
     ];
 
     public function products() {
         return $this->hasMany(Product::class);
+    }
+
+    public function getDisplayableColumns() {
+        return [
+            [
+                'text' => "Id",
+                "value" => "id"
+            ],
+            [
+                'text' => "Name",
+                "value" => "name"
+            ],
+            [
+                'text' => "Slug",
+                "value" => "slug"
+            ],
+            [
+                'text' => "Created At",
+                "value" => "created_at"
+            ]
+        ];
     }
 }

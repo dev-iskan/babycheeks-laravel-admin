@@ -21,6 +21,10 @@ class Category extends Model implements HasMedia
         ];
     }
 
+    public function getRouteKeyName () {
+        return 'slug';
+    }
+
     protected $fillable = [
         'name',
         'description'
@@ -45,5 +49,30 @@ class Category extends Model implements HasMedia
             return;
         }
         $this->parent()->associate($id)->save();
+    }
+
+    public function getDisplayableColumns() {
+        return [
+            [
+                'text' => "Id",
+                "value" => "id"
+            ],
+            [
+                'text' => "Name",
+                "value" => "name"
+            ],
+            [
+                'text' => "Slug",
+                "value" => "slug"
+            ],
+            [
+                'text' => "Parent",
+                "value" => "parent"
+            ],
+            [
+                'text' => "Created At",
+                "value" => "created_at"
+            ]
+        ];
     }
 }

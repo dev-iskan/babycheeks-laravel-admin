@@ -13,7 +13,13 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        return CategoryResource::collection(Category::with(['children', 'media'])->get());
+        return CategoryResource::collection(Category::with(['parent'])->get())->additional([
+            'meta' => [
+                'displayableColumns'=>Category::getModel()->getDisplayableColumns(),
+                'table' => Category::getModel()->getTable(),
+                'routeKey' => Category::getModel()->getRouteKeyName()
+            ]
+        ]);
     }
 
     public function store(StoreCategoryRequest $request)
@@ -28,7 +34,7 @@ class CategoryController extends Controller
 
     public function show(Category $category)
     {
-        return new CategoryResource($category->load('children','media'));
+        return new CategoryResource($category->load('media'));
     }
 
     public function update(UpdateCategoryRequest $request, Category $category)
