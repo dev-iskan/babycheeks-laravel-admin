@@ -12,8 +12,8 @@ class BrandController extends Controller
 {
     public function index()
     {
-        return BrandResource::collection(Brand::all())->additional([
-            'meta' => [
+        return BrandResource::collection(Brand::paginate(10))->additional([
+            'datatable' => [
                 'displayableColumns'=>Brand::getModel()->getDisplayableColumns(),
                 'table' => Brand::getModel()->getTable(),
                 'routeKey' => Brand::getModel()->getRouteKeyName()

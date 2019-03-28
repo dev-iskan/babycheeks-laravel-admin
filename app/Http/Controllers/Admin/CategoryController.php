@@ -13,8 +13,8 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        return CategoryResource::collection(Category::with(['parent'])->get())->additional([
-            'meta' => [
+        return CategoryResource::collection(Category::with(['parent'])->paginate(10))->additional([
+            'datatable' => [
                 'displayableColumns'=>Category::getModel()->getDisplayableColumns(),
                 'table' => Category::getModel()->getTable(),
                 'routeKey' => Category::getModel()->getRouteKeyName()

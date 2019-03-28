@@ -12,8 +12,8 @@ class AgeController extends Controller
 {
     public function index()
     {
-        return AgeResource::collection(Age::all())->additional([
-            'meta' => [
+        return AgeResource::collection(Age::paginate(10))->additional([
+            'datatable' => [
                 'displayableColumns'=>Age::getModel()->getDisplayableColumns(),
                 'table' => Age::getModel()->getTable(),
                 'routeKey' => Age::getModel()->getRouteKeyName()
