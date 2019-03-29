@@ -44,7 +44,7 @@ class Product extends Model implements HasMedia
     }
 
     public function setBrand($id) {
-        if($id === null) {
+        if($id == 0) {
             $this->brand()->dissociate()->save();
             return;
         }

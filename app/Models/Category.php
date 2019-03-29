@@ -44,7 +44,7 @@ class Category extends Model implements HasMedia
 
     public function setParent($id) {
 
-        if($id === null) {
+        if($id == 0) {
             $this->parent()->dissociate()->save();
             return;
         }
