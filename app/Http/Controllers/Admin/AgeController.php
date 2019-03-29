@@ -7,18 +7,24 @@ use App\Http\Requests\Ages\UpdateAgeRequest;
 use App\Http\Resources\AgeResource;
 use App\Models\Age;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class AgeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return AgeResource::collection(Age::paginate(10))->additional([
-            'datatable' => [
-                'displayableColumns'=>Age::getModel()->getDisplayableColumns(),
-                'table' => Age::getModel()->getTable(),
-                'routeKey' => Age::getModel()->getRouteKeyName()
-            ]
-        ]);
+        if ($request->pluck) {
+            return Age::all()->pluck('age', 'id');
+        }
+        else {
+            return AgeResource::collection(Age::paginate(10))->additional([
+                'datatable' => [
+                    'displayableColumns'=>Age::getModel()->getDisplayableColumns(),
+                    'table' => Age::getModel()->getTable(),
+                    'routeKey' => Age::getModel()->getRouteKeyName()
+                ]
+            ]);
+        }
     }
 
     public function store(StoreAgeRequest $request)

@@ -8,18 +8,28 @@ use App\Http\Resources\CategoryResource;
 use App\ImageService\ImageService;
 use App\Models\Category;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return CategoryResource::collection(Category::with(['parent'])->paginate(10))->additional([
-            'datatable' => [
-                'displayableColumns'=>Category::getModel()->getDisplayableColumns(),
-                'table' => Category::getModel()->getTable(),
-                'routeKey' => Category::getModel()->getRouteKeyName()
-            ]
-        ]);
+        if ($request->parent) {
+            return Category::type('parent')->pluck('name', 'id');
+        }
+        else if($request->pluck) {
+            return Category::type('children')->pluck('name', 'id');
+        }
+        else {
+             return CategoryResource::collection(Category::with(['parent'])->paginate(10))->additional([
+                 'datatable' => [
+                     'displayableColumns'=>Category::getModel()->getDisplayableColumns(),
+                     'table' => Category::getModel()->getTable(),
+                     'routeKey' => Category::getModel()->getRouteKeyName()
+                 ]
+             ]);
+        }
+
     }
 
     public function store(StoreCategoryRequest $request)

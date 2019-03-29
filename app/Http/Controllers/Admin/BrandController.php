@@ -7,18 +7,24 @@ use App\Http\Requests\Brands\StoreBrandRequest;
 use App\Http\Requests\Brands\UpdateBrandRequest;
 use App\Models\Brand;
 use App\Http\Resources\BrandResource;
+use Illuminate\Http\Request;
 
 class BrandController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return BrandResource::collection(Brand::paginate(10))->additional([
-            'datatable' => [
-                'displayableColumns'=>Brand::getModel()->getDisplayableColumns(),
-                'table' => Brand::getModel()->getTable(),
-                'routeKey' => Brand::getModel()->getRouteKeyName()
-            ]
-        ]);
+        if ($request->pluck) {
+            return Brand::all()->pluck('name', 'id');
+        }
+        else {
+            return BrandResource::collection(Brand::paginate(10))->additional([
+                'datatable' => [
+                    'displayableColumns'=>Brand::getModel()->getDisplayableColumns(),
+                    'table' => Brand::getModel()->getTable(),
+                    'routeKey' => Brand::getModel()->getRouteKeyName()
+                ]
+            ]);
+        }
     }
 
     public function store(StoreBrandRequest $request)
