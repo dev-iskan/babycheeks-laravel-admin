@@ -20,9 +20,13 @@ class ProductResource extends JsonResource
             'slug' => $this->slug,
             'gender' => $this->gender,
             'description' => $this->description,
-            'ages' => AgeResource::collection($this->whenLoaded('ages')),
+            'ages' => $this->whenLoaded('ages', function () {
+                return $this->ages->pluck('age', 'id');
+            }),
             'brand' => $this->brand()->exists() ? $this->brand->name : 'No brand',
-            'categories' => CategoryResource::collection($this->whenLoaded('categories')),
+            'categories' => $this->whenLoaded('categories', function () {
+                return $this->categories->pluck('name', 'id');
+            }),
             'images' => $this->whenLoaded('media', function () {
                 return $this->getMedia($this->getTable())->map(function ($image) {
                     return $image->getFullUrl();
