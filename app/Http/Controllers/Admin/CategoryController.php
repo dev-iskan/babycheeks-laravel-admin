@@ -20,13 +20,13 @@ class CategoryController extends Controller
     public function index(Request $request)
     {
         if ($request->parent) {
-            return Category::type('parent')->where('slug', '!=' , $request->category_slug)->pluck('name', 'id');
+            return Category::type('parent')->where('slug', '!=' , $request->category_slug)->finished()->pluck('name', 'id');
         }
         else if($request->pluck) {
-            return Category::type('children')->pluck('name', 'id');
+            return Category::type('children')->finished()->pluck('name', 'id');
         }
         else {
-             return CategoryResource::collection(Category::with(['parent'])->paginate(10))->additional([
+             return CategoryResource::collection(Category::with(['parent'])->finished()->paginate(10))->additional([
                  'datatable' => [
                      'displayableColumns'=>Category::getModel()->getDisplayableColumns(),
                      'table' => Category::getModel()->getTable(),

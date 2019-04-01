@@ -19,7 +19,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        return ProductResource::collection(Product::with(['brand'])->paginate(10))->additional([
+        return ProductResource::collection(Product::with(['brand'])->finished()->paginate(10))->additional([
             'datatable' => [
                 'displayableColumns'=>Product::getModel()->getDisplayableColumns(),
                 'table' => Product::getModel()->getTable(),
@@ -28,9 +28,16 @@ class ProductController extends Controller
         ]);
     }
 
-    public function store(StoreProductRequest $request)
+    public function create(Product $product) {
+        if (!$product->exists) {
+            $product = Product::createAndReturnSkeletonProduct();
+            return new ProductResource($product);
+        }
+    }
+
+    public function store(StoreProductRequest $request, Product $product)
     {
-        $product = Product::create($request->only(['name', 'description', 'gender']));
+        $product->storeFinishedProduct($request->only(['name', 'description', 'gender']));
         $this->syncRelationships($request, $product);
 
         $image_service = new ImageService($product);

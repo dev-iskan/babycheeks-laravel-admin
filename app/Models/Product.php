@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\HasFinish;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Scout\Searchable;
@@ -10,7 +11,7 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 
 class Product extends Model implements HasMedia
 {
-    use Sluggable, HasMediaTrait, Searchable;
+    use Sluggable, HasMediaTrait, Searchable, HasFinish;
 
     public function sluggable()
     {
@@ -41,6 +42,18 @@ class Product extends Model implements HasMedia
 
     public function brand() {
         return $this->belongsTo(Brand::class);
+    }
+
+    public static function createAndReturnSkeletonProduct () {
+        return Product::create([
+            'name' => 'undefined'
+        ]);
+    }
+
+    public function storeFinishedProduct ($data) {
+        $this->fill($data);
+        $this->finished = true;
+        $this->save();
     }
 
     public function setBrand($id) {

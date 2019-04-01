@@ -45,8 +45,7 @@ class Category extends Model implements HasMedia
 
     public static function createAndReturnSkeletonCategory () {
         return Category::create([
-            'name' => 'undefined',
-            'description' =>''
+            'name' => 'undefined'
         ]);
     }
 
