@@ -30,8 +30,7 @@ class StoreProductRequest extends FormRequest
             'brand_id' => 'nullable',
             'categories' => 'array|required',
             'ages' => 'array|required',
-            'images' => 'array|nullable',
-            'images.*' => 'image'
+            'images' => 'array|nullable'
         ];
     }
 }

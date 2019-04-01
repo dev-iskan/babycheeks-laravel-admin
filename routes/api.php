@@ -18,18 +18,22 @@ Route::group(['namespace' => 'Auth', 'prefix' => 'auth'],function () {
 });
 
 
-Route::group(['namespace'=>'Admin', 'prefix' => 'admin', 'as'=>'admin'], function () {
+Route::group(['namespace'=>'Admin', 'prefix' => 'admin'], function () {
     Route::get('/categories/create', 'CategoryController@create')->name('admin.categories.create');
-    Route::resource('/categories', 'CategoryController')->only(['index', 'show', 'update', 'destroy']);
+    Route::resource('/categories', 'CategoryController', ['as'=>'admin'])->only(['index', 'show', 'update', 'destroy']);
     Route::post('/categories/{category}', 'CategoryController@store')->name('admin.categories.store');
 
-    Route::resource('/ages', 'AgeController')->only(['index', 'show', 'store', 'update', 'destroy']);
+    Route::resource('/ages', 'AgeController', ['as'=>'admin'])->only(['index', 'show', 'store', 'update', 'destroy']);
 
-    Route::resource('/brands', 'BrandController')->only(['index', 'show', 'store', 'update', 'destroy']);
+    Route::resource('/brands', 'BrandController', ['as'=>'admin'])->only(['index', 'show', 'store', 'update', 'destroy']);
 
     Route::get('/products/create', 'ProductController@create')->name('admin.products.create');
-    Route::resource('/products', 'ProductController')->only(['index', 'show', 'update', 'destroy']);
+    Route::resource('/products', 'ProductController', ['as'=>'admin'])->only(['index', 'show', 'update', 'destroy']);
     Route::post('/products/{product}', 'ProductController@store')->name('admin.products.store');
+
+    Route::post('/media/store', 'MediaController@store');
+    Route::get('/media', 'MediaController@index');
+    Route::delete('/media/destroy/{media}', 'MediaController@destroy');
 });
 
 
