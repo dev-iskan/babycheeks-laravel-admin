@@ -7,6 +7,7 @@ $factory->define(\App\Models\Product::class, function (Faker $faker) {
         'name' => $name = $faker->name,
         'slug' => str_slug($name),
         'description' => $faker->sentence(40),
-        'gender' => $faker->randomElement(['u', 'm', 'f'])
+        'gender' => $faker->randomElement(['u', 'm', 'f']),
+        'finished'=> true
     ];
 });

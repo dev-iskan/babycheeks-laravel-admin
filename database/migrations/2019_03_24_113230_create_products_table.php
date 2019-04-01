@@ -18,8 +18,9 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->string('slug');
             $table->text('description')->nullable();
-            $table->enum('gender', ['m', 'f', 'u'])->default('u');
+            $table->enum('gender', ['m', 'f', 'u'])->default('u')->nullable();
             $table->unsignedInteger('brand_id')->nullable();
+            $table->boolean('finished')->default(false);
             $table->foreign('brand_id')->references('id')->on('brands')->onDelete('set null');
             $table->timestamps();
         });

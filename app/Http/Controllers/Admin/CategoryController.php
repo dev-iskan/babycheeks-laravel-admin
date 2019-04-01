@@ -20,7 +20,7 @@ class CategoryController extends Controller
     public function index(Request $request)
     {
         if ($request->parent) {
-            return Category::type('parent')->pluck('name', 'id');
+            return Category::type('parent')->where('slug', '!=' , $request->category_slug)->pluck('name', 'id');
         }
         else if($request->pluck) {
             return Category::type('children')->pluck('name', 'id');
@@ -37,9 +37,16 @@ class CategoryController extends Controller
 
     }
 
-    public function store(StoreCategoryRequest $request)
+    public function create(Category $category) {
+        if (!$category->exists) {
+            $category = Category::createAndReturnSkeletonCategory();
+            return new CategoryResource($category);
+        }
+    }
+
+    public function store(StoreCategoryRequest $request, Category $category)
     {
-        $category = Category::create($request->only(['name', 'description']));
+        $category->storeFinishedCategory($request->only(['name', 'description']));
         $category->setParent($request->parent_id);
 
         $image_service = new ImageService($category);
