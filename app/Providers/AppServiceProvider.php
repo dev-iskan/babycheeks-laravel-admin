@@ -6,6 +6,7 @@ use App\Search\Engines\ElasticSearchEngine;
 use Elasticsearch\ClientBuilder;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Scout\EngineManager;
+use Telegram\Bot\Laravel\Facades\Telegram;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -16,6 +17,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->singleton('telegram', function () {
+            return new Telegram();
+        });
+
         $this->app->singleton('elasticsearch', function () {
             //register as singleton our elasticsearch-php package
             return ClientBuilder::create()

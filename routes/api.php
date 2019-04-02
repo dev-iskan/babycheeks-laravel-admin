@@ -36,5 +36,12 @@ Route::group(['namespace'=>'Admin', 'prefix' => 'admin'], function () {
     Route::delete('/media/destroy/{media}', 'MediaController@destroy');
 });
 
+Route::group(['namespace' => 'Api'],function () {
+    Route::get('/telegram', 'TelegramController@index');
+    Route::post('/order/{product}', 'TelegramController@sendOrder');
+    Route::post('/feedback', 'TelegramController@sendFeedback');
+    Route::post('/telegram/{product}', 'TelegramController@sendProduct');
+});
+
 
 Route::get('/search', 'Api\ElasticSearchController@search');
