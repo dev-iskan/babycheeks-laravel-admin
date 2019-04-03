@@ -24,8 +24,8 @@ class SendOrderRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'phone' => 'required'
+            'name' => 'required|string|max:250',
+            'phone' => 'required|max:250'
         ];
     }
 }

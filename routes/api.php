@@ -34,6 +34,9 @@ Route::group(['namespace'=>'Admin', 'prefix' => 'admin'], function () {
     Route::post('/media/store', 'MediaController@store');
     Route::get('/media', 'MediaController@index');
     Route::delete('/media/destroy/{media}', 'MediaController@destroy');
+
+    Route::resource('/orders', 'OrderController', ['as'=>'admin'])->only(['index', 'update', 'destroy']);
+
 });
 
 Route::group(['namespace' => 'Api'],function () {
