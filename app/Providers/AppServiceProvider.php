@@ -17,10 +17,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('telegram', function () {
-            return new Telegram();
-        });
-
         $this->app->singleton('elasticsearch', function () {
             //register as singleton our elasticsearch-php package
             return ClientBuilder::create()
