@@ -18,7 +18,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        return ProductResource::collection(Product::with(['brand'])->finished()->paginate(10))->additional([
+        return ProductResource::collection(Product::with(['brand'])->finished()->latest()->paginate(10))->additional([
             'datatable' => [
                 'displayableColumns'=>Product::getModel()->getDisplayableColumns(),
                 'table' => Product::getModel()->getTable(),

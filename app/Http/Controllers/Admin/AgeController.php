@@ -22,7 +22,7 @@ class AgeController extends Controller
             return Age::all()->pluck('age', 'id');
         }
         else {
-            return AgeResource::collection(Age::paginate(10))->additional([
+            return AgeResource::collection(Age::latest()->paginate(10))->additional([
                 'datatable' => [
                     'displayableColumns'=>Age::getModel()->getDisplayableColumns(),
                     'table' => Age::getModel()->getTable(),

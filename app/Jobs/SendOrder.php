@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Events\ProductOrdered;
 use App\Models\Product;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
@@ -34,10 +35,14 @@ class SendOrder implements ShouldQueue
             'product_name' => $this->product->name,
             'url' => 'http://babycheeks.test'
         ])->render();
-        Telegram::sendMessage([
+        $response = Telegram::sendMessage([
             'chat_id' => env('TELEGRAM_USER_ID'),
             'text' => $text,
             'parse_mode' => 'Markdown'
         ]);
+
+        if ($response->getMessageId()) {
+            event(new ProductOrdered($this->product, $this->data));
+        };
     }
 }

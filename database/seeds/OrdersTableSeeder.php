@@ -12,7 +12,7 @@ class OrdersTableSeeder extends Seeder
     public function run()
     {
         factory(\App\Models\Order::class, 300)->create()->each(function (\App\Models\Order $order) {
-            $order->product()->associate(\App\Models\Product::inRandomOrder()->first())->save();
+            $order->product()->associate(\App\Models\Product::where('finished', false)->inRandomOrder()->first())->save();
         });
     }
 }

@@ -22,7 +22,7 @@ class BrandController extends Controller
             return Brand::all()->pluck('name', 'id');
         }
         else {
-            return BrandResource::collection(Brand::paginate(10))->additional([
+            return BrandResource::collection(Brand::latest()->paginate(10))->additional([
                 'datatable' => [
                     'displayableColumns'=>Brand::getModel()->getDisplayableColumns(),
                     'table' => Brand::getModel()->getTable(),

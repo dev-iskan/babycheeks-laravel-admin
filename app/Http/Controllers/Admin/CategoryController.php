@@ -25,7 +25,7 @@ class CategoryController extends Controller
             return Category::type('children')->finished()->pluck('name', 'id');
         }
         else {
-             return CategoryResource::collection(Category::with(['parent'])->finished()->paginate(10))->additional([
+             return CategoryResource::collection(Category::with(['parent'])->finished()->latest()->paginate(10))->additional([
                  'datatable' => [
                      'displayableColumns'=>Category::getModel()->getDisplayableColumns(),
                      'table' => Category::getModel()->getTable(),
