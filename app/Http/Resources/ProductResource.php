@@ -20,6 +20,7 @@ class ProductResource extends JsonResource
             'slug' => $this->slug,
             'gender' => $this->gender,
             'description' => $this->description,
+            'price' => $this->formatted_price,
             'ages' => $this->whenLoaded('ages', function () {
                 return $this->ages->pluck('age', 'id');
             }),

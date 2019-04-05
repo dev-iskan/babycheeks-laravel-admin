@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Traits\FullTextSearch;
 use App\Traits\HasFinish;
+use App\Traits\HasPrice;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
@@ -11,7 +12,7 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 
 class Product extends Model implements HasMedia
 {
-    use Sluggable, HasMediaTrait, HasFinish, FullTextSearch;
+    use Sluggable, HasMediaTrait, HasFinish, FullTextSearch, HasPrice;
     /**
      * The columns of the full text index
      */
