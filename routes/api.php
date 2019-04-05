@@ -45,3 +45,5 @@ Route::group(['namespace' => 'Api'],function () {
     Route::post('/feedback', 'TelegramController@sendFeedback');
     Route::post('/telegram/{product}', 'TelegramController@sendProduct');
 });
+
+Route::get('/search', 'Api\SearchController');

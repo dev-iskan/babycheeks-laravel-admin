@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\FullTextSearch;
 use App\Traits\HasFinish;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
@@ -10,7 +11,14 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 
 class Product extends Model implements HasMedia
 {
-    use Sluggable, HasMediaTrait, HasFinish;
+    use Sluggable, HasMediaTrait, HasFinish, FullTextSearch;
+    /**
+     * The columns of the full text index
+     */
+    protected $searchable = [
+        'name',
+        'description'
+    ];
 
     public function sluggable()
     {
