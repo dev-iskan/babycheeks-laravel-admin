@@ -30,13 +30,16 @@ class SendProduct implements ShouldQueue
     {
         $text = view('telegram.product', [
             'name' => $this->product->name,
-            'brand' => $this->product->brand
+            'brand' => $this->product->brand,
+            'brand_name' => $this->product->brand->name,
+            'formatted_price' => $this->product->formatted_price,
+            'formatted_gender' => $this->product->formatted_gender
         ])->render();
         $photo = InputFile::create($this->product->getMedia('products')->first()->getFullUrl());
         Telegram::sendPhoto([
             'chat_id' => env('TELEGRAM_USER_ID'),
             'photo' => $photo,
-            'caption' => $text,
+            'caption' => $text
         ]);
     }
 }

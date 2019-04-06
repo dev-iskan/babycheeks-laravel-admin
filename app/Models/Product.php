@@ -37,8 +37,19 @@ class Product extends Model implements HasMedia
     protected $fillable = [
         'name',
         'description',
-        'gender'
+        'gender',
+        'price'
     ];
+
+    public function getFormattedGenderAttribute () {
+        $genders = [
+            'm' => 'Мальчики',
+            'f' => 'Девочки',
+            'u' => 'Унисекс',
+        ];
+
+        return $genders[$this->gender];
+    }
 
     public function categories() {
         return $this->belongsToMany(Category::class)->withTimestamps();

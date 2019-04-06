@@ -13,4 +13,8 @@ trait HasPrice {
     public function getPriceAttribute ($value) {
         return new Money($value);
     }
+
+    public function setPriceAttribute ($value) {
+        $this->attributes['price'] = $value * 100;
+    }
 }

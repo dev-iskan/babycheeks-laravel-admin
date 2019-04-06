@@ -29,6 +29,7 @@ class StoreProductRequest extends FormRequest
             'gender' => 'required',
             'brand_id' => 'nullable',
             'categories' => 'array|required',
+            'price' => 'required',
             'ages' => 'array|required',
             'images' => 'array|required',
         ];

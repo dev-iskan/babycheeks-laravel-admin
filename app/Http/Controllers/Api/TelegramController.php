@@ -24,6 +24,7 @@ class TelegramController extends Controller
     }
 
     public function sendProduct (Product $product) {
+        $product->load(['brand','categories', 'ages', 'media']);
         SendProduct::dispatchNow($product);
         return response()->json(['status' => 'Successfully sent!'],201);
     }

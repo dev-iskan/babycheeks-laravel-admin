@@ -41,7 +41,7 @@ class MediaController extends Controller
     public function destroy(Media $media) {
         $id = $media->id;
         $media->delete();
-        return response()->json(['id' => $id],202);
+        return response()->json(['id' => $id],204);
     }
 
     protected function addMedia($model){

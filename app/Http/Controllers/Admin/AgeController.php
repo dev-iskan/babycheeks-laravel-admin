@@ -34,8 +34,8 @@ class AgeController extends Controller
 
     public function store(StoreAgeRequest $request)
     {
-        Age::create($request->only('age'));
-        return response()->json(['status' => 'Successfully created!'],201);
+        $age = Age::create($request->only('age'));
+        return response()->json(['status' => 'Successfully created!', 'age'=> $age],201);
     }
 
     public function show(Age $age)
@@ -46,12 +46,12 @@ class AgeController extends Controller
     public function update(UpdateAgeRequest $request, Age $age)
     {
         $age->update($request->only('age'));
-        return response()->json(['status' => 'Successfully updated!'], 200);
+        return response()->json(['status' => 'Successfully updated!', 'age' => $age], 200);
     }
 
     public function destroy(Age $age)
     {
         $age->delete();
-        return response()->json(['status' => 'Successfully deleted!'], 202);
+        return response()->json(['status' => 'Successfully deleted!'], 204);
     }
 }

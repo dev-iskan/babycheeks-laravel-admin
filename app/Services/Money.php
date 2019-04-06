@@ -25,6 +25,6 @@ class Money {
     }
 
     public function amount () {
-        return $this->money->getAmount();
+        return $this->money->getAmount() / 100;
     }
 }

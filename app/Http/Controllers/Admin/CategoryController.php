@@ -22,7 +22,7 @@ class CategoryController extends Controller
             return Category::type('parent')->where('slug', '!=' , $request->category_slug)->finished()->pluck('name', 'id');
         }
         else if($request->pluck) {
-            return Category::type('children')->finished()->pluck('name', 'id');
+            return Category::finished()->pluck('name', 'id');
         }
         else {
              return CategoryResource::collection(Category::with(['parent'])->finished()->latest()->paginate(10))->additional([
@@ -47,7 +47,7 @@ class CategoryController extends Controller
     {
         $category->storeFinishedCategory($request->only(['name', 'description']));
         $category->setParent($request->parent_id);
-        return response()->json(['status' => 'Successfully created!'],201);
+        return response()->json(['status' => 'Successfully created!', 'category' => $category],201);
     }
 
     public function show(Category $category)
@@ -59,12 +59,12 @@ class CategoryController extends Controller
     {
         $category->update($request->only(['name', 'description']));
         $category->setParent($request->parent_id);
-        return response()->json(['status' => 'Successfully updated!'], 200);
+        return response()->json(['status' => 'Successfully updated!', 'category' => $category], 200);
     }
 
     public function destroy(Category $category)
     {
         $category->delete();
-        return response()->json(['status' => 'Successfully deleted!'], 202);
+        return response()->json(['status' => 'Successfully deleted!'], 204);
     }
 }

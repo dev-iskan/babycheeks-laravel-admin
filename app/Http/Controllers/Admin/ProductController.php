@@ -36,7 +36,7 @@ class ProductController extends Controller
 
     public function store(StoreProductRequest $request, Product $product)
     {
-        $product->storeFinishedProduct($request->only(['name', 'description', 'gender']));
+        $product->storeFinishedProduct($request->only(['name', 'description', 'gender', 'price']));
         $this->syncRelationships($request, $product);
         return response()->json(['status' => 'Successfully created!'],201);
     }
@@ -48,7 +48,7 @@ class ProductController extends Controller
 
     public function update(UpdateProductRequest $request, Product $product)
     {
-        $product->update($request->only(['name', 'description', 'gender']));
+        $product->update($request->only(['name', 'description', 'gender', 'price']));
         $this->syncRelationships($request, $product);
         return response()->json(['status' => 'Successfully updated!'], 200);
     }

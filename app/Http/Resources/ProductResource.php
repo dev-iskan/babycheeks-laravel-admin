@@ -19,8 +19,10 @@ class ProductResource extends JsonResource
             'name' => $this->name,
             'slug' => $this->slug,
             'gender' => $this->gender,
+            'formatted_gender' => $this->formatted_gender,
             'description' => $this->description,
-            'price' => $this->formatted_price,
+            'price' => $this->price->amount(),
+            'formatted_price' => $this->formatted_price,
             'ages' => $this->whenLoaded('ages', function () {
                 return $this->ages->pluck('age', 'id');
             }),
