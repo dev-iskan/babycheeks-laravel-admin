@@ -28,10 +28,22 @@ class SendProduct implements ShouldQueue
      */
     public function handle()
     {
+        $ages = $this->product->ages->pluck('age')->map(function ($age) {
+            return '#'.str_slug($age, '_');
+        });
+        $ages = implode(', ', $ages->toArray());
+
+        $categories = $this->product->categories->pluck('slug')->map(function($slug) {
+            return '#'.str_slug($slug, '_');
+        });
+
+        $categories = implode(', ', $categories->toArray());
+
         $text = view('telegram.product', [
             'name' => $this->product->name,
-            'brand' => $this->product->brand,
-            'brand_name' => $this->product->brand->name,
+            'ages' => $ages,
+            'categories' => $categories,
+            'brand_name' => '#'.str_slug($this->product->brand->slug, '_'),
             'formatted_price' => $this->product->formatted_price,
             'formatted_gender' => $this->product->formatted_gender
         ])->render();
