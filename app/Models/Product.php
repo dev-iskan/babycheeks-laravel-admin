@@ -47,7 +47,6 @@ class Product extends Model implements HasMedia
             'f' => 'Девочки',
             'u' => 'Унисекс',
         ];
-
         return $genders[$this->gender];
     }
 
@@ -69,7 +68,8 @@ class Product extends Model implements HasMedia
 
     public static function createAndReturnSkeletonProduct () {
         return Product::create([
-            'name' => 'undefined'
+            'name' => 'undefined',
+            'gender' => 'u'
         ]);
     }
 
