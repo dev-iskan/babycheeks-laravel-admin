@@ -48,6 +48,11 @@ return [
 //        ],
     ],
 
+    'chats' => [
+        'chat_id' => env('TELEGRAM_CHAT_ID'),
+        'user_id' => env('TELEGRAM_USER_ID')
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Default Bot Name

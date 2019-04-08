@@ -31,7 +31,7 @@ class SendFeedback implements ShouldQueue
             'text' => $this->data['text']
         ])->render();
         Telegram::sendMessage([
-            'chat_id' => env('TELEGRAM_USER_ID'),
+            'chat_id' => config('telegram.chats.user_id'),
             'text' => $text,
             'parse_mode' => 'Markdown'
         ]);
