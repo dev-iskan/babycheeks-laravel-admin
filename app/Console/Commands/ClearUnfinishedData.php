@@ -39,13 +39,12 @@ class ClearUnfinishedData extends Command
      */
     public function handle()
     {
-        try  {
+        try {
             Product::unfinished()->get()->each->delete();
             Category::unfinished()->get()->each->delete();
             $this->info('Successfully deleted!');
-        } catch(\Exception $e) {
+        } catch (\Exception $e) {
             $this->error('Something went wrong!');
         }
-
     }
 }

@@ -30,7 +30,8 @@ class Product extends Model implements HasMedia
         ];
     }
 
-    public function getRouteKeyName () {
+    public function getRouteKeyName()
+    {
         return 'slug';
     }
 
@@ -41,7 +42,8 @@ class Product extends Model implements HasMedia
         'price'
     ];
 
-    public function getFormattedGenderAttribute () {
+    public function getFormattedGenderAttribute()
+    {
         $genders = [
             'm' => 'Мальчики',
             'f' => 'Девочки',
@@ -50,52 +52,62 @@ class Product extends Model implements HasMedia
         return $genders[$this->gender];
     }
 
-    public function categories() {
+    public function categories()
+    {
         return $this->belongsToMany(Category::class)->withTimestamps();
     }
 
-    public function ages() {
+    public function ages()
+    {
         return $this->belongsToMany(Age::class)->withTimestamps();
     }
 
-    public function orders() {
+    public function orders()
+    {
         return $this->hasMany(Product::class);
     }
 
-    public function brand() {
+    public function brand()
+    {
         return $this->belongsTo(Brand::class);
     }
 
-    public static function createAndReturnSkeletonProduct () {
+    public static function createAndReturnSkeletonProduct()
+    {
         return Product::create([
             'name' => 'undefined',
             'gender' => 'u'
         ]);
     }
 
-    public function storeFinishedProduct ($data) {
+    public function storeFinishedProduct($data)
+    {
         $this->fill($data);
         $this->finished = true;
         $this->save();
     }
 
-    public function setBrand($id) {
-        if($id == 0) {
+    public function setBrand($id)
+    {
+        if ($id == 0) {
             $this->brand()->dissociate()->save();
             return;
         }
         $this->brand()->associate($id)->save();
     }
 
-    public function syncAges(array $ids) {
+    public function syncAges(array $ids)
+    {
         $this->ages()->sync($ids);
     }
 
-    public function syncCategories(array $ids) {
+    public function syncCategories(array $ids)
+    {
         $this->categories()->sync($ids);
     }
 
-    public function getDisplayableColumns() {
+    public function getDisplayableColumns()
+    {
         return [
             [
                 'text' => "Id",

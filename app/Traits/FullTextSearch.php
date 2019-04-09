@@ -18,17 +18,17 @@ trait FullTextSearch
 
         $words = explode(' ', $term);
 
-        foreach($words as $key => $word) {
+        foreach ($words as $key => $word) {
             /*
              * applying + operator (required word) only big words
              * because smaller ones are not indexed by mysql
              */
-            if(strlen($word) >= 3) {
+            if (strlen($word) >= 3) {
                 $words[$key] = '+' . $word . '*';
             }
         }
 
-        $searchTerm = implode( ' ', $words);
+        $searchTerm = implode(' ', $words);
 
         return $searchTerm;
     }
@@ -42,9 +42,9 @@ trait FullTextSearch
      */
     public function scopeSearch($query, $term)
     {
-        $columns = implode(',',$this->searchable);
+        $columns = implode(',', $this->searchable);
 
-        $query->whereRaw("MATCH ({$columns}) AGAINST (? IN BOOLEAN MODE)" , $this->fullTextWildcards($term));
+        $query->whereRaw("MATCH ({$columns}) AGAINST (? IN BOOLEAN MODE)", $this->fullTextWildcards($term));
 
         return $query;
     }

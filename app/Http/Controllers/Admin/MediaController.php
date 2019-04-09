@@ -16,35 +16,45 @@ class MediaController extends Controller
         $this->middleware(['auth:api']);
     }
 
-    public function index(Request $request) {
+    public function index(Request $request)
+    {
         $model = $request->model === 'category' ?
             Category::where('slug', $request->slug)->first() :
             Product::where('slug', $request->slug)->first();
 
-        if(!$model) return response()->json(['status' => 'Not Found'], 404);
+        if (!$model) {
+            return response()->json(['status' => 'Not Found'], 404);
+        }
 
         return MediaResource::collection($model->getMedia($model->getTable()));
     }
 
-    public function store (Request $request) {
-        if(!$request->hasFile('image')) return response()->json(['status'=>'No image'], 404);
+    public function store(Request $request)
+    {
+        if (!$request->hasFile('image')) {
+            return response()->json(['status'=>'No image'], 404);
+        }
         $model = $request->model === 'category' ?
             Category::where('slug', $request->slug)->first() :
             Product::where('slug', $request->slug)->first();
 
-        if(!$model) return response()->json(['status' => 'Not Found'], 404);
+        if (!$model) {
+            return response()->json(['status' => 'Not Found'], 404);
+        }
 
         $id = $this->addMedia($model);
-        return response()->json(['id' => $id],201);
+        return response()->json(['id' => $id], 201);
     }
 
-    public function destroy(Media $media) {
+    public function destroy(Media $media)
+    {
         $id = $media->id;
         $media->delete();
-        return response()->json(['id' => $id],204);
+        return response()->json(['id' => $id], 204);
     }
 
-    protected function addMedia($model){
+    protected function addMedia($model)
+    {
         return $model->addMediaFromRequest('image')
             ->usingName(str_random(16))
             ->withResponsiveImages()

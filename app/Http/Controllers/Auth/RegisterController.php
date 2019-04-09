@@ -18,6 +18,5 @@ class RegisterController extends Controller
     {
         $user = User::create($request->only('name', 'email', 'password'));
         return new UserResource($user);
-
     }
 }

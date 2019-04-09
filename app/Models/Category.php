@@ -22,7 +22,8 @@ class Category extends Model implements HasMedia
         ];
     }
 
-    public function getRouteKeyName () {
+    public function getRouteKeyName()
+    {
         return 'slug';
     }
 
@@ -31,40 +32,46 @@ class Category extends Model implements HasMedia
         'description'
     ];
 
-    public function children () {
+    public function children()
+    {
         return $this->hasMany(Category::class, 'parent_id', 'id');
     }
 
-    public function parent () {
+    public function parent()
+    {
         return $this->belongsTo(Category::class, 'parent_id');
     }
 
-    public function products() {
+    public function products()
+    {
         return $this->belongsToMany(Product::class)->withTimestamps();
     }
 
-    public static function createAndReturnSkeletonCategory () {
+    public static function createAndReturnSkeletonCategory()
+    {
         return Category::create([
             'name' => 'undefined'
         ]);
     }
 
-    public function storeFinishedCategory ($data) {
+    public function storeFinishedCategory($data)
+    {
         $this->fill($data);
         $this->finished = true;
         $this->save();
     }
 
-    public function setParent($id) {
-
-        if($id == 0) {
+    public function setParent($id)
+    {
+        if ($id == 0) {
             $this->parent()->dissociate()->save();
             return;
         }
         $this->parent()->associate($id)->save();
     }
 
-    public function getDisplayableColumns() {
+    public function getDisplayableColumns()
+    {
         return [
             [
                 'text' => "Id",

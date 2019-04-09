@@ -20,8 +20,7 @@ class BrandController extends Controller
     {
         if ($request->pluck) {
             return Brand::all()->pluck('name', 'id');
-        }
-        else {
+        } else {
             return BrandResource::collection(Brand::latest()->paginate(10))->additional([
                 'datatable' => [
                     'displayableColumns'=>Brand::getModel()->getDisplayableColumns(),
@@ -35,7 +34,7 @@ class BrandController extends Controller
     public function store(StoreBrandRequest $request)
     {
         $brand = Brand::create($request->only('name'));
-        return response()->json(['status' => 'Successfully created!', 'brand' => $brand],201);
+        return response()->json(['status' => 'Successfully created!', 'brand' => $brand], 201);
     }
 
     public function show(Brand $brand)

@@ -27,7 +27,8 @@ class ProductController extends Controller
         ]);
     }
 
-    public function create(Product $product) {
+    public function create(Product $product)
+    {
         if (!$product->exists) {
             $product = Product::createAndReturnSkeletonProduct();
             return new ProductResource($product);
@@ -38,7 +39,7 @@ class ProductController extends Controller
     {
         $product->storeFinishedProduct($request->only(['name', 'description', 'gender', 'price']));
         $this->syncRelationships($request, $product);
-        return response()->json(['status' => 'Successfully created!'],201);
+        return response()->json(['status' => 'Successfully created!'], 201);
     }
 
     public function show(Product $product)
@@ -59,7 +60,8 @@ class ProductController extends Controller
         return response()->json(['status' => 'Successfully deleted!'], 202);
     }
 
-    protected function syncRelationships(Request $request, Product $product) {
+    protected function syncRelationships(Request $request, Product $product)
+    {
         $product->setBrand($request->brand_id);
         $product->syncAges($request->ages);
         $product->syncCategories($request->categories);

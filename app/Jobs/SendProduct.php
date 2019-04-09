@@ -33,7 +33,7 @@ class SendProduct implements ShouldQueue
         });
         $ages = implode(', ', $ages->toArray());
 
-        $categories = $this->product->categories->pluck('slug')->map(function($slug) {
+        $categories = $this->product->categories->pluck('slug')->map(function ($slug) {
             return '#'.str_slug($slug, '_');
         });
 

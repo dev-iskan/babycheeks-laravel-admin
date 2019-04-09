@@ -18,7 +18,8 @@ class Brand extends Model
         ];
     }
 
-    public function getRouteKeyName () {
+    public function getRouteKeyName()
+    {
         return 'slug';
     }
 
@@ -26,11 +27,13 @@ class Brand extends Model
         'name'
     ];
 
-    public function products() {
+    public function products()
+    {
         return $this->hasMany(Product::class);
     }
 
-    public function getDisplayableColumns() {
+    public function getDisplayableColumns()
+    {
         return [
             [
                 'text' => "Id",

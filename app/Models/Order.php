@@ -14,11 +14,13 @@ class Order extends Model
         'phone'
     ];
 
-    public function product () {
+    public function product()
+    {
         return $this->belongsTo(Product::class);
     }
 
-    public function setFinished (bool $val) {
+    public function setFinished(bool $val)
+    {
         $this->finished = $val;
         $this->save();
     }

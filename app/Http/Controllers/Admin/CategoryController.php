@@ -19,13 +19,11 @@ class CategoryController extends Controller
     public function index(Request $request)
     {
         if ($request->parent) {
-            return Category::type('parent')->where('slug', '!=' , $request->category_slug)->finished()->pluck('name', 'id');
-        }
-        else if($request->pluck) {
+            return Category::type('parent')->where('slug', '!=', $request->category_slug)->finished()->pluck('name', 'id');
+        } elseif ($request->pluck) {
             return Category::finished()->pluck('name', 'id');
-        }
-        else {
-             return CategoryResource::collection(Category::with(['parent'])->finished()->latest()->paginate(10))->additional([
+        } else {
+            return CategoryResource::collection(Category::with(['parent'])->finished()->latest()->paginate(10))->additional([
                  'datatable' => [
                      'displayableColumns'=>Category::getModel()->getDisplayableColumns(),
                      'table' => Category::getModel()->getTable(),
@@ -33,10 +31,10 @@ class CategoryController extends Controller
                  ]
              ]);
         }
-
     }
 
-    public function create(Category $category) {
+    public function create(Category $category)
+    {
         if (!$category->exists) {
             $category = Category::createAndReturnSkeletonCategory();
             return new CategoryResource($category);
@@ -47,7 +45,7 @@ class CategoryController extends Controller
     {
         $category->storeFinishedCategory($request->only(['name', 'description']));
         $category->setParent($request->parent_id);
-        return response()->json(['status' => 'Successfully created!', 'category' => $category],201);
+        return response()->json(['status' => 'Successfully created!', 'category' => $category], 201);
     }
 
     public function show(Category $category)

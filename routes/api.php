@@ -11,7 +11,7 @@
 |
 */
 
-Route::group(['namespace' => 'Auth', 'prefix' => 'auth'],function () {
+Route::group(['namespace' => 'Auth', 'prefix' => 'auth'], function () {
     Route::post('/register', 'RegisterController');
     Route::post('/login', 'LoginController');
     Route::get('/me', 'MeController');
@@ -36,10 +36,9 @@ Route::group(['namespace'=>'Admin', 'prefix' => 'admin'], function () {
     Route::delete('/media/destroy/{media}', 'MediaController@destroy');
 
     Route::resource('/orders', 'OrderController', ['as'=>'admin'])->only(['index', 'update', 'destroy']);
-
 });
 
-Route::group(['namespace' => 'Api'],function () {
+Route::group(['namespace' => 'Api'], function () {
     Route::get('/telegram', 'TelegramController@index');
     Route::post('/order/{product}', 'TelegramController@sendOrder');
     Route::post('/feedback', 'TelegramController@sendFeedback');

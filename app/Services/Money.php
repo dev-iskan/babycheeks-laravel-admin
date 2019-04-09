@@ -1,13 +1,15 @@
 <?php
 
 namespace App\Services;
+
 use Money\Money as BaseMoney;
 use Money\Currency;
 use Money\Currencies\ISOCurrencies;
 use Money\Formatter\IntlMoneyFormatter;
 use NumberFormatter;
 
-class Money {
+class Money
+{
     protected $money;
 
     public function __construct($value)
@@ -15,7 +17,8 @@ class Money {
         $this->money = new BaseMoney($value, new Currency('UZS'));
     }
 
-    public function formatted () {
+    public function formatted()
+    {
         $formatter = new IntlMoneyFormatter(
             new NumberFormatter('ru_RU', NumberFormatter::CURRENCY),
             new ISOCurrencies()
@@ -24,7 +27,8 @@ class Money {
         return $formatter->format($this->money);
     }
 
-    public function amount () {
+    public function amount()
+    {
         return $this->money->getAmount() / 100;
     }
 }

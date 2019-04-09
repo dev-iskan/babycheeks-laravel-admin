@@ -53,7 +53,8 @@ class User extends Authenticatable implements JWTSubject
         return [];
     }
 
-    public static function boot () {
+    public static function boot()
+    {
         parent::boot();
 
         static::creating(function ($user) {

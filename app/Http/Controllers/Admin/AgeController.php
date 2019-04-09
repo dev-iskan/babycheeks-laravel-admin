@@ -20,8 +20,7 @@ class AgeController extends Controller
     {
         if ($request->pluck) {
             return Age::all()->pluck('age', 'id');
-        }
-        else {
+        } else {
             return AgeResource::collection(Age::latest()->paginate(10))->additional([
                 'datatable' => [
                     'displayableColumns'=>Age::getModel()->getDisplayableColumns(),
@@ -35,7 +34,7 @@ class AgeController extends Controller
     public function store(StoreAgeRequest $request)
     {
         $age = Age::create($request->only('age'));
-        return response()->json(['status' => 'Successfully created!', 'age'=> $age],201);
+        return response()->json(['status' => 'Successfully created!', 'age'=> $age], 201);
     }
 
     public function show(Age $age)
