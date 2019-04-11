@@ -49,7 +49,7 @@ class SendProduct implements ShouldQueue
         ])->render();
         $photo = InputFile::create($this->product->getMedia('products')->first()->getFullUrl());
         Telegram::sendPhoto([
-            'chat_id' => config('telegram.chats.user_id'),
+            'chat_id' => config('telegram.chats.chat_id'),
             'photo' => $photo,
             'caption' => $text
         ]);
