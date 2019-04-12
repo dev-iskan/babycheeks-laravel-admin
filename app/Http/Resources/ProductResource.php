@@ -27,6 +27,7 @@ class ProductResource extends JsonResource
                 return $this->ages->pluck('age', 'id');
             }),
             'brand' => $this->brand()->exists() ? $this->brand->id : null,
+            'brand_name' => $this->brand()->exists() ? $this->brand->name : null,
             'categories' => $this->whenLoaded('categories', function () {
                 return $this->categories->pluck('name', 'id');
             }),

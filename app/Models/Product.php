@@ -127,7 +127,7 @@ class Product extends Model implements HasMedia
             ],
             [
                 'text' => "Brand",
-                "value" => "brand"
+                "value" => "brand_name"
             ],
             [
                 'text' => "Created At",
