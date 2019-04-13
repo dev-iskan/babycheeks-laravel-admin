@@ -46,3 +46,4 @@ Route::group(['namespace' => 'Api'], function () {
 });
 
 Route::get('/search', 'Api\SearchController');
+Route::get('/filter', 'Api\SearchController@filter');
