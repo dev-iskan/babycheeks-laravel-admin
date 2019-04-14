@@ -21,19 +21,19 @@ class TelegramController extends Controller
     public function sendOrder(SendOrderRequest $request, Product $product)
     {
         SendOrder::dispatch($request->all(), $product);
-        return response()->json(['status' => 'Successfully sent!'], 201);
+        return response()->json(['status' => __('custom.orderSent')], 201);
     }
 
     public function sendProduct(Product $product)
     {
         $product->load(['brand','categories', 'ages', 'media']);
         SendProduct::dispatchNow($product);
-        return response()->json(['status' => 'Successfully sent!'], 201);
+        return response()->json(['status' => __('custom.productSent')], 201);
     }
 
     public function sendFeedback(SendFeedbackRequest $request)
     {
         SendFeedback::dispatch($request->all());
-        return response()->json(['status' => 'Successfully sent!'], 201);
+        return response()->json(['status' => __('custom.feedbackSent')], 201);
     }
 }

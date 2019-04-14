@@ -45,7 +45,7 @@ class CategoryController extends Controller
     {
         $category->storeFinishedCategory($request->only(['name', 'description']));
         $category->setParent($request->parent_id);
-        return response()->json(['status' => 'Successfully created!', 'category' => $category], 201);
+        return response()->json(['status' => __('custom.created'), 'category' => $category], 201);
     }
 
     public function show(Category $category)
@@ -57,12 +57,12 @@ class CategoryController extends Controller
     {
         $category->update($request->only(['name', 'description']));
         $category->setParent($request->parent_id);
-        return response()->json(['status' => 'Successfully updated!', 'category' => $category], 200);
+        return response()->json(['status' => __('custom.updated'), 'category' => $category], 200);
     }
 
     public function destroy(Category $category)
     {
         $category->delete();
-        return response()->json(['status' => 'Successfully deleted!'], 204);
+        return response()->json(['status' => __('custom.deleted')], 204);
     }
 }

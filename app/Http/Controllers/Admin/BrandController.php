@@ -34,7 +34,7 @@ class BrandController extends Controller
     public function store(StoreBrandRequest $request)
     {
         $brand = Brand::create($request->only('name'));
-        return response()->json(['status' => 'Successfully created!', 'brand' => $brand], 201);
+        return response()->json(['status' => __('custom.created'), 'brand' => $brand], 201);
     }
 
     public function show(Brand $brand)
@@ -45,12 +45,12 @@ class BrandController extends Controller
     public function update(UpdateBrandRequest $request, Brand $brand)
     {
         $brand->update($request->only('name'));
-        return response()->json(['status' => 'Successfully updated!', 'brand' => $brand], 200);
+        return response()->json(['status' => __('custom.updated'), 'brand' => $brand], 200);
     }
 
     public function destroy(Brand $brand)
     {
         $brand->delete();
-        return response()->json(['status' => 'Successfully deleted!'], 204);
+        return response()->json(['status' => __('custom.deleted')], 204);
     }
 }

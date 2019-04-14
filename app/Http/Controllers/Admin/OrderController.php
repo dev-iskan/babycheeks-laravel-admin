@@ -22,12 +22,12 @@ class OrderController extends Controller
     public function update(Request $request, Order $order)
     {
         $order->setFinished($request->get('finished'));
-        return response()->json(['status' => 'Successfully updated!'], 200);
+        return response()->json(['status' => __('custom.updated')], 200);
     }
 
     public function destroy(Order $order)
     {
         $order->delete();
-        return response()->json(['status' => 'Successfully deleted!'], 202);
+        return response()->json(['status' => __('custom.deleted')], 202);
     }
 }

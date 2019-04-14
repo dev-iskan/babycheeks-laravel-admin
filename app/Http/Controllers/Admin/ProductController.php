@@ -39,7 +39,7 @@ class ProductController extends Controller
     {
         $product->storeFinishedProduct($request->only(['name', 'description', 'gender', 'price']));
         $this->syncRelationships($request, $product);
-        return response()->json(['status' => 'Successfully created!'], 201);
+        return response()->json(['status' => __('custom.created')], 201);
     }
 
     public function show(Product $product)
@@ -51,13 +51,13 @@ class ProductController extends Controller
     {
         $product->update($request->only(['name', 'description', 'gender', 'price']));
         $this->syncRelationships($request, $product);
-        return response()->json(['status' => 'Successfully updated!'], 200);
+        return response()->json(['status' => __('custom.updated')], 200);
     }
 
     public function destroy(Product $product)
     {
         $product->delete();
-        return response()->json(['status' => 'Successfully deleted!'], 202);
+        return response()->json(['status' => __('custom.deleted')], 202);
     }
 
     protected function syncRelationships(Request $request, Product $product)
