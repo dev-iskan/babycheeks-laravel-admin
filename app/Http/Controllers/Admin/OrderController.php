@@ -16,7 +16,7 @@ class OrderController extends Controller
 
     public function index()
     {
-        return OrderResource::collection(Order::unfinished()->with('product')->latest()->paginate(9));
+        return OrderResource::collection(Order::with('product')->unfinishedFirst()->latest()->paginate(9));
     }
 
     public function update(Request $request, Order $order)

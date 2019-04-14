@@ -13,4 +13,8 @@ trait HasFinish
     {
         return $builder->where('finished', false);
     }
+
+    public function scopeUnfinishedFirst($builder) {
+        return $builder->orderBy('finished', 'asc');
+    }
 }
