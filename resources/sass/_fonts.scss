@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'GT Walsheim Bold';
+    src: url('/project/extension/fonts/GTWalsheimPro-Bold.woff2') format('woff2'),
+        url('/project/extension/fonts/GTWalsheimPro-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GT Walsheim Pro Black';
+    src: url('/project/extension/fonts/GTWalsheimPro-Black.woff2') format('woff2'),
+        url('/project/extension/fonts/GTWalsheimPro-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+
+
+@font-face {
+    font-family: 'GT Walsheim Medium';
+    src: url('/project/extension/fonts/GTWalsheimPro-Medium.woff2') format('woff2'),
+        url('/project/extension/fonts/GTWalsheimPro-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GT Walsheim UltraBold';
+    src: url('/project/extension/fonts/GTWalsheimPro-UltraBold.woff2') format('woff2'),
+        url('/project/extension/fonts/GTWalsheimPro-UltraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
