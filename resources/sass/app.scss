@@ -76,11 +76,15 @@ a:hover {
 }
 
 .navbar-center {
+    display: flex;
 
     justify-content: center;
     margin: 0 auto;
 }
 
+.navbar-item img {
+    max-height: 2.75rem !important;
+}
 
 .album {
     margin-top: 20px;
@@ -101,33 +105,6 @@ a:hover {
     max-width: 15%;
     padding: 0 20px;
 }
-
-// Main Page Carousel
-
-#vueopp {
-    & .swiper-wrapper {
-        display: flex;
-        align-items: center;
-    }
-
-    & .swiper-slide {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-        -webkit-filter: grayscale(100%);
-        filter: grayscale(100%);
-        transition: .3s;
-    }
-
-    & .swiper-slide:hover {
-        -webkit-filter: grayscale(0%);
-        filter: grayscale(0%);
-    }
-
-}
-
-
 
 
 
