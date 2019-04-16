@@ -33,10 +33,6 @@
                     loop: true,
                     autoplay: true,
                     delay: 3000,
-                    navigation: {
-                        nextEl:'null',
-                        prevEl:'null',
-                    },
                 }
             }
         }
