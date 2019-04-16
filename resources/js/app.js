@@ -1,3 +1,5 @@
+require('./bootstrap');
+import Vuelidate from 'vuelidate'
 window.Vue = require('vue');
 /**
  * The following block of code may be used to automatically register your
@@ -16,8 +18,10 @@ window.Vue = require('vue');
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-Vue.component('brand-swiper', require('./components/BrandSwiper.vue').default);
-Vue.component('contact-us', require('./components/ContactUs.vue').default);
+Vue.component('brand-swiper', require('./components/BrandSwiper.vue').default)
+Vue.component('contact-us', require('./components/ContactUs.vue').default)
+Vue.use(Vuelidate)
+
 const app = new Vue({
     el: '#app'
 });
