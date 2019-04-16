@@ -76,6 +76,21 @@ a:hover {
 }
 
 
+.navbar-dropdown a.navbar-item:hover {
+    background-color: transparent !important;
+    color: #0a0a0a;
+}
+
+.navbar-dropdown a.navbar-item::before {
+  content: '->';
+  color: #3A69D3;
+  padding-right: 10px;
+
+  &:hover{
+    padding-right: 15px;
+  }
+}
+
 
 .navbar-center {
   display: flex;
