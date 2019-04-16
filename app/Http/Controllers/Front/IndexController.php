@@ -9,6 +9,6 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        return view('layouts.base');
+        return view('pages.main');
     }
 }
