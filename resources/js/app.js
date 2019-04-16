@@ -17,6 +17,7 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 Vue.component('brand-swiper', require('./components/BrandSwiper.vue').default);
+Vue.component('contact-us', require('./components/ContactUs.vue').default);
 const app = new Vue({
     el: '#app'
 });
