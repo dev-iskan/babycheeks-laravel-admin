@@ -53,6 +53,6 @@
 
 
   </div>
-  <contact-us></contact-us>
+  <contact-us />
 </div>
 @endsection
