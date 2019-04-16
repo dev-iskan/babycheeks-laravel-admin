@@ -41,6 +41,7 @@
 
             </div>
           </div>
+<<<<<<< Updated upstream
 
 
           @else
@@ -62,8 +63,34 @@
           </p>
         </div>
       </div>
+=======
+
+
+        @else
+        <a class="navbar-item">
+          {{$category->name}}
+        </a>
+        @endif
+        @endforeach
+      </div>
+
+  </div>
+  <div class="navbar-end">
+    <div class="field d-flex align-center">
+      <p class="control has-icons-left has-icons-right">
+        <input class="input is-rounded" type="email" placeholder="Search">
+        <span class="icon is-small is-left">
+          <i class="fas fa-search"></i>
+        </span>
+      </p>
+    </div>
+>>>>>>> Stashed changes
   </div>
   </nav>
+</div>
+
+</div>
+</nav>
 </div>
 
 </div>
