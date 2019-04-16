@@ -5,17 +5,17 @@
                 <div class="column is-two-fifths">
                     <div>
                         <a href="#">
-                            <img src="img/babycheeks-logo.png" alt="footer-logo" width="40%">
+                            <img src="{{asset('img/babycheeks-logo.png')}}" alt="footer-logo" width="40%">
                         </a>
                     </div>
 
                     <div class="d-flex flex-column-nowrap">
                         <p class="mh-2">Свяжитесь с нами по нашим социальным сетям</p>
                         <div class="social-media__icons">
-                            <a href="#"><img src="img/social_media/telegram.png" alt="tg"></a>
-                            <a href="#"><img src="img/social_media/insta.png" alt="inst"></a>
-                            <a href="#"><img src="img/social_media/facebook.png" alt="facebook"></a>
-                            <a href="#"><img src="img/social_media/youtube.png" alt="youtube"></a>
+                            <a href="#"><img src="{{asset('img/social_media/telegram.png')}}" alt="tg"></a>
+                            <a href="#"><img src="{{asset('img/social_media/insta.png')}}" alt="inst"></a>
+                            <a href="#"><img src="{{asset('img/social_media/facebook.png')}}" alt="facebook"></a>
+                            <a href="#"><img src="{{asset('img/social_media/youtube.png')}}" alt="youtube"></a>
                         </div>
                     </div>
 

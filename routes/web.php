@@ -13,3 +13,4 @@
 
 Route::get('/', 'Front\IndexController');
 Route::get('/about-us', 'Front\AboutUsController');
+Route::get('/c/parent', 'Front\CategoryController@parent');
