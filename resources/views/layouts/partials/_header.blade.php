@@ -14,7 +14,7 @@
         </a>
       </div>
 
-      <div id="navbar-menu-mobile" class="navbar-menu" style="height: 52px;">
+      <div id="navbar-menu-mobile" class="navbar-menu">
         <div class="navbar-start">
           @foreach ($categories as $category)
           @if ($category->children()->exists())
@@ -41,6 +41,8 @@
 
             </div>
           </div>
+<<<<<<< Updated upstream
+
 
           @else
           <a class="navbar-item">
@@ -49,6 +51,8 @@
           @endif
           @endforeach
         </div>
+
+      </div>
       <div class="navbar-end">
         <div class="field d-flex align-center">
           <p class="control has-icons-left has-icons-right">
@@ -59,6 +63,28 @@
           </p>
         </div>
       </div>
+=======
+
+
+        @else
+        <a class="navbar-item">
+          {{$category->name}}
+        </a>
+        @endif
+        @endforeach
+      </div>
+
+  </div>
+  <div class="navbar-end">
+    <div class="field d-flex align-center">
+      <p class="control has-icons-left has-icons-right">
+        <input class="input is-rounded" type="email" placeholder="Search">
+        <span class="icon is-small is-left">
+          <i class="fas fa-search"></i>
+        </span>
+      </p>
+    </div>
+>>>>>>> Stashed changes
   </div>
   </nav>
 </div>

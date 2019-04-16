@@ -12722,21 +12722,6 @@ a:hover {
   padding: 0.375rem 1rem;
 }
 
-.navbar-dropdown a.navbar-item:hover {
-  background-color: transparent !important;
-  color: #0a0a0a;
-}
-
-.navbar-dropdown a.navbar-item::before {
-  content: "->";
-  color: #3A69D3;
-  padding-right: 10px;
-}
-
-.navbar-dropdown a.navbar-item::before:hover {
-  padding-right: 15px;
-}
-
 .navbar-center {
   display: flex;
   justify-content: center;
