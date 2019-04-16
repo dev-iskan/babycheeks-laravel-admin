@@ -7,43 +7,63 @@
             <swiper-slide><img src="img/company_logo/garanimals.png" alt="" width="60%"></swiper-slide>
             <swiper-slide><img src="img/company_logo/gerber.png" alt="" width="60%"></swiper-slide>
             <swiper-slide><img src="img/company_logo/tommee.png" alt="" width="60%"></swiper-slide>
-            <div class="swiper-pagination" slot="pagination"></div>
-            <div class="swiper-button-prev" slot="button-prev"></div>
-            <div class="swiper-button-next" slot="button-next"></div>
         </swiper>
     </div>
 </template>
 
 <script>
-    import { swiper, swiperSlide } from 'vue-awesome-swiper'
+    import {
+        swiper,
+        swiperSlide
+    } from 'vue-awesome-swiper'
     export default {
         components: {
             swiper,
             swiperSlide
         },
-        created () {
+        created() {
             console.log('init')
         },
-        data () {
+        data() {
             return {
                 options: {
                     slidesPerView: 4,
                     spaceBetween: 0,
                     freeMode: false,
-                    pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true
-                    },
+                    loop: true,
+                    autoplay: true,
+                    delay: 3000,
                     navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev'
-                    }
+                        nextEl:'null',
+                        prevEl:'null',
+                    },
                 }
             }
         }
     }
+
 </script>
 
 <style lang="scss" scoped>
+    .swiper-wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 150px;
+        height: 100%;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        transition: .3s;
+    }
+
+    .swiper-slide:hover {
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(0%);
+    }
 
 </style>

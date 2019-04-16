@@ -12723,8 +12723,13 @@ a:hover {
 }
 
 .navbar-center {
+  display: flex;
   justify-content: center;
   margin: 0 auto;
+}
+
+.navbar-item img {
+  max-height: 2.75rem !important;
 }
 
 .album {
@@ -12743,26 +12748,6 @@ a:hover {
 .social-media__icons a {
   max-width: 15%;
   padding: 0 20px;
-}
-
-#vueopp .swiper-wrapper {
-  display: flex;
-  align-items: center;
-}
-
-#vueopp .swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-  transition: 0.3s;
-}
-
-#vueopp .swiper-slide:hover {
-  -webkit-filter: grayscale(0%);
-  filter: grayscale(0%);
 }
 
 .is-background-image {
