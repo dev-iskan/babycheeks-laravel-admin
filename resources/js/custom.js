@@ -22,4 +22,17 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  var expandButton = document.querySelector('.expand-button')
+
+  expandButton.addEventListener('click', function () {
+    var text = document.querySelector('.special-text')
+    text.classList.toggle('-expanded')
+
+    if (text.classList.contains('-expanded')) {
+      expandButton.innerHTML = 'Свернуть'
+    } else {
+      expandButton.innerHTML = 'Читать больше'
+    }
+  })
+
 });

@@ -1812,10 +1812,10 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue_the_mask__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-the-mask */ "./node_modules/vue-the-mask/dist/vue-the-mask.js");
-/* harmony import */ var vue_the_mask__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_the_mask__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
-/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var vue_the_mask__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-the-mask */ "./node_modules/vue-the-mask/dist/vue-the-mask.js");
+/* harmony import */ var vue_the_mask__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_the_mask__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_1__);
 //
 //
 //
@@ -1873,7 +1873,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 
-var phoneRegExp = vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["helpers"].regex('phoneRegExp', /^\+998\d{2}\s\d{3}-\d{2}-\d{2}$/);
+var phoneRegExp = vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_1__["helpers"].regex('phoneRegExp', /^\+998\d{2}\s\d{3}-\d{2}-\d{2}$/);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1888,19 +1888,19 @@ var phoneRegExp = vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["helpers
   validations: {
     form: {
       name: {
-        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_1__["required"]
       },
       phone: {
-        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"],
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_1__["required"],
         phoneRegExp: phoneRegExp
       },
       text: {
-        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_1__["required"]
       }
     }
   },
   directives: {
-    mask: vue_the_mask__WEBPACK_IMPORTED_MODULE_1__["mask"]
+    mask: vue_the_mask__WEBPACK_IMPORTED_MODULE_0__["mask"]
   },
   methods: {
     submit: function submit() {
@@ -25490,7 +25490,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var withParams = Object({"MIX_PUSHER_APP_CLUSTER":"mt1","MIX_PUSHER_APP_KEY":"","NODE_ENV":"development"}).BUILD === 'web' ? __webpack_require__(/*! ./withParamsBrowser */ "./node_modules/vuelidate/lib/withParamsBrowser.js").withParams : __webpack_require__(/*! ./params */ "./node_modules/vuelidate/lib/params.js").withParams;
+var withParams = Object({"MIX_PUSHER_APP_KEY":"","MIX_PUSHER_APP_CLUSTER":"mt1","NODE_ENV":"development"}).BUILD === 'web' ? __webpack_require__(/*! ./withParamsBrowser */ "./node_modules/vuelidate/lib/withParamsBrowser.js").withParams : __webpack_require__(/*! ./params */ "./node_modules/vuelidate/lib/params.js").withParams;
 var _default = withParams;
 exports.default = _default;
 
@@ -25573,10 +25573,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuelidate__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vuelidate__WEBPACK_IMPORTED_MODULE_0__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./custom.js */ "./resources/js/custom.js");
+
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-
-__webpack_require__(/*! ./custom.js */ "./resources/js/custom.js");
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -25592,7 +25592,6 @@ __webpack_require__(/*! ./custom.js */ "./resources/js/custom.js");
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
 
 Vue.component('brand-swiper', __webpack_require__(/*! ./components/BrandSwiper.vue */ "./resources/js/components/BrandSwiper.vue")["default"]);
 Vue.component('contact-us', __webpack_require__(/*! ./components/ContactUs.vue */ "./resources/js/components/ContactUs.vue")["default"]);
@@ -25813,6 +25812,18 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
+
+  var expandButton = document.querySelector('.expand-button');
+  expandButton.addEventListener('click', function () {
+    var text = document.querySelector('.special-text');
+    text.classList.toggle('-expanded');
+
+    if (text.classList.contains('-expanded')) {
+      expandButton.innerHTML = 'Свернуть';
+    } else {
+      expandButton.innerHTML = 'Читать больше';
+    }
+  });
 });
 
 /***/ }),
@@ -25835,8 +25846,8 @@ document.addEventListener('DOMContentLoaded', function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\laragon\www\babycheeks\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\laragon\www\babycheeks\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/iskandar/Documents/Sites/babycheeks/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/iskandar/Documents/Sites/babycheeks/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
