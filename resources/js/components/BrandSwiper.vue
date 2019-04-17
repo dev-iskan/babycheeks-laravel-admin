@@ -21,9 +21,6 @@
             swiper,
             swiperSlide
         },
-        created() {
-            console.log('init')
-        },
         data() {
             return {
                 options: {
