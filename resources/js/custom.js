@@ -22,17 +22,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Expand description block in category_parent page
   var expandButton = document.querySelector('.expand-button')
+  if (expandButton) {
+    expandButton.addEventListener('click', function () {
+      var text = document.querySelector('.special-text')
+      text.classList.toggle('-expanded')
 
-  expandButton.addEventListener('click', function () {
-    var text = document.querySelector('.special-text')
-    text.classList.toggle('-expanded')
-
-    if (text.classList.contains('-expanded')) {
-      expandButton.innerHTML = 'Свернуть'
-    } else {
-      expandButton.innerHTML = 'Читать больше'
-    }
-  })
-
+      if (text.classList.contains('-expanded')) {
+        expandButton.innerHTML = 'Свернуть'
+      } else {
+        expandButton.innerHTML = 'Читать больше'
+      }
+    })
+  }
 });
