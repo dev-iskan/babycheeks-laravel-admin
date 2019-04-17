@@ -1,13 +1,5 @@
 @extends('layouts.base')
 
-@section('styles')
-  hhhhh
-@endsection
-
-@section('scripts')
-  hhhhh
-@endsection
-
 @section('content')
 <div class="category__child">
   <div class="container is-fluid">

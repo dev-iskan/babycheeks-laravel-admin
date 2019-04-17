@@ -76,7 +76,31 @@ a:hover {
   }
 }
 
+@media screen and (min-width: 1088px){
+  .navbar-dropdown a.navbar-item:hover {
+    background-color: transparent;
+    color: #0a0a0a;
+}
+}
+.navbar-link{
+  height: 52px;
+}
+.navbar-dropdown a.navbar-item::before {
+  content: "\f061";
+  padding: 0 10px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  top: 2px;
+  position: relative;
+  transition: .3s all;
+}
+.navbar-dropdown a.navbar-item:hover::before  {
+  padding: 0 7px;
+}
 
+.navbar-dropdown a.navbar-item  {
+  display: flex;
+}
 
 .navbar-center {
   display: flex;
@@ -127,6 +151,15 @@ a:hover {
 .no-box-shadow {
   box-shadow: none;
 }
+.card{
+  transition: .3s all;
+}
+.card:hover{
+  transform: translateY(-0.5rem) scale(1.02);
+  box-shadow: 0 1.5rem 4rem rgba(0,0,0,0.15);
+}
+
+
 
 .child-categories__list li {
   padding: 5px 0;
