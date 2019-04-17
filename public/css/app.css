@@ -12722,6 +12722,35 @@ a:hover {
   padding: 0.375rem 1rem;
 }
 
+@media screen and (min-width: 1088px) {
+  .navbar-dropdown a.navbar-item:hover {
+    background-color: transparent;
+    color: #0a0a0a;
+  }
+}
+
+.navbar-link {
+  height: 52px;
+}
+
+.navbar-dropdown a.navbar-item::before {
+  content: "\F061";
+  padding: 0 10px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  top: 2px;
+  position: relative;
+  transition: 0.3s all;
+}
+
+.navbar-dropdown a.navbar-item:hover::before {
+  padding: 0 7px;
+}
+
+.navbar-dropdown a.navbar-item {
+  display: flex;
+}
+
 .navbar-center {
   display: flex;
   justify-content: center;

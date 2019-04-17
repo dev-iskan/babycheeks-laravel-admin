@@ -3,7 +3,7 @@
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item" href="https://bulma.io">
-        <img src="{{asset('img/babycheeks-logo.png')}}" width="112" height="28">
+          <img src="{{asset('img/babycheeks-logo.png')}}" width="112" height="28">
         </a>
 
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
@@ -43,27 +43,25 @@
           </div>
 
 
-        @else
-        <a class="navbar-item">
-          {{$category->name}}
-        </a>
-        @endif
-        @endforeach
-      </div>
-
+          @else
+          <a class="navbar-item">
+            {{$category->name}}
+          </a>
+          @endif
+          @endforeach
+        </div>
+        <div class="navbar-end">
+          <div class="field d-flex align-center">
+            <p class="control has-icons-left has-icons-right">
+              <input class="input is-rounded" type="email" placeholder="Search">
+              <span class="icon is-small is-left">
+                <i class="fas fa-search"></i>
+              </span>
+            </p>
+          </div>
+        </div>
+    </nav>
   </div>
-  <div class="navbar-end">
-    <div class="field d-flex align-center">
-      <p class="control has-icons-left has-icons-right">
-        <input class="input is-rounded" type="email" placeholder="Search">
-        <span class="icon is-small is-left">
-          <i class="fas fa-search"></i>
-        </span>
-      </p>
-    </div>
-  </div>
-  </nav>
-</div>
 
 </div>
 </nav>
