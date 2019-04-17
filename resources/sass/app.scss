@@ -150,6 +150,15 @@ a:hover {
 .no-box-shadow {
   box-shadow: none;
 }
+.card{
+  transition: .3s all;
+}
+.card:hover{
+  transform: translateY(-0.5rem) scale(1.02);
+  box-shadow: 0 1.5rem 4rem rgba(0,0,0,0.15);
+}
+
+
 
 .child-categories__list li {
   padding: 5px 0;

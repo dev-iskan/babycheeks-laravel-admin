@@ -12793,6 +12793,16 @@ a:hover {
   box-shadow: none;
 }
 
+.card {
+  transition: 0.3s all;
+}
+
+.card:hover {
+  -webkit-transform: translateY(-0.5rem) scale(1.02);
+          transform: translateY(-0.5rem) scale(1.02);
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+}
+
 .child-categories__list li {
   padding: 5px 0;
 }
