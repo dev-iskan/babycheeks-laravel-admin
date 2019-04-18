@@ -1,5 +1,9 @@
 @extends('layouts.base')
 
+@section('scripts')
+<script src="{{ asset('js/bulma-extensions.js') }}" defer></script>
+@endsection
+
 @section('content')
 <div class="category__child">
   <div class="container is-fluid">
