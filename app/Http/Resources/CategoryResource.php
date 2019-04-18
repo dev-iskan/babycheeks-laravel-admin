@@ -19,6 +19,7 @@ class CategoryResource extends JsonResource
             'name' => $this->name,
             'slug' => $this->slug,
             'description' => $this->description,
+            'primary' => $this->primary ? 'Да' : null,
             'parent' => $this->parent()->exists() ? $this->parent->id : null,
             'image' => $this->whenLoaded('media', function () {
                 return $this->getFirstMedia($this->getTable()) ? $this->getFirstMedia($this->getTable())->getFullUrl() : null;

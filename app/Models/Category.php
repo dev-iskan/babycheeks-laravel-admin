@@ -29,8 +29,13 @@ class Category extends Model implements HasMedia
 
     protected $fillable = [
         'name',
-        'description'
+        'description',
+        'primary'
     ];
+
+    public function scopePrimary($builder) {
+      return $builder->where('primary', true);
+    }
 
     public function children()
     {
@@ -92,6 +97,10 @@ class Category extends Model implements HasMedia
             [
                 'text' => "Created At",
                 "value" => "created_at"
+            ],
+            [
+              'text' => "Primary",
+              "value" => "primary"
             ]
         ];
     }
