@@ -43,7 +43,7 @@ class CategoryController extends Controller
 
     public function store(StoreCategoryRequest $request, Category $category)
     {
-        $category->storeFinishedCategory($request->only(['name', 'description']));
+        $category->storeFinishedCategory($request->only(['name', 'description', 'primary']));
         $category->setParent($request->parent_id);
         return response()->json(['status' => __('custom.created'), 'category' => $category], 201);
     }
@@ -55,7 +55,7 @@ class CategoryController extends Controller
 
     public function update(UpdateCategoryRequest $request, Category $category)
     {
-        $category->update($request->only(['name', 'description']));
+        $category->update($request->only(['name', 'description', 'primary']));
         $category->setParent($request->parent_id);
         return response()->json(['status' => __('custom.updated'), 'category' => $category], 200);
     }
