@@ -442,7 +442,7 @@ document.addEventListener('DOMContentLoaded', function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/iskandar/Documents/Sites/babycheeks/resources/js/bulma-extensions.js */"./resources/js/bulma-extensions.js");
+module.exports = __webpack_require__(/*! C:\laragon\www\babycheeks\resources\js\bulma-extensions.js */"./resources/js/bulma-extensions.js");
 
 
 /***/ })

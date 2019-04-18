@@ -15,7 +15,7 @@
 </div>
 
 <div>
-  <div class="aboutus__container mh-5">
+  <div class="aboutus__container mh-5 section">
     <div class="container">
       <div class="columns">
         <div class="column is-half d-flex align-center justify-center">

@@ -13860,6 +13860,14 @@ label.panel-block:hover {
   font-style: normal;
 }
 
+.page-color_blue {
+  color: #3A69D3;
+}
+
+.page-color_pink {
+  color: #FF55C2;
+}
+
 /* Scroll Bar */
 
 ::-webkit-scrollbar {
@@ -13933,6 +13941,10 @@ a:hover {
     background-color: transparent;
     color: #0a0a0a;
   }
+
+  .navbar {
+    padding: 0 5rem;
+  }
 }
 
 .navbar-link {
@@ -13981,7 +13993,7 @@ a:hover {
 }
 
 .social-media__icons a {
-  max-width: 15%;
+  max-width: 5rem;
   padding: 0 20px;
 }
 
@@ -13992,7 +14004,7 @@ a:hover {
 }
 
 .contactus__container {
-  background: #3A69D3;
+  background: #f0f0f0;
 }
 
 .no-box-shadow {
@@ -14150,6 +14162,20 @@ a:hover {
   justify-content: center;
   align-items: stretch;
   margin: 0 auto;
+}
+
+.navbar-brand .navbar-item {
+  order: 2;
+}
+
+.navbar-brand .navbar-burger {
+  order: 1;
+  margin: 0;
+}
+
+.navbar-brand .field {
+  order: 3;
+  margin-left: auto;
 }
 
 .text-is-right {

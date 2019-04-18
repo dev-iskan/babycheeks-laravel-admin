@@ -1,7 +1,7 @@
 <template>
   <div class="contactus__container">
     <form @submit.prevent="submit" class="container d-flex flex-column-nowrap justify-center align-center py-3">
-      <p class="text-center subtitle is-3 has-text-white">Свяжитесь с нами</p>
+      <p class="text-center subtitle is-3 page-color_blue">Свяжитесь с нами</p>
       <div class="control has-icons-left has-icons-right container-50 mg-auto-horizontal">
         <input
         v-model="form.name"
