@@ -84,15 +84,7 @@ a:hover {
   }
 }
 
-@media screen and (min-width: 1088px) {
-  .navbar-dropdown a.navbar-item:hover {
-    background-color: transparent;
-    color: #0a0a0a;
-  }
-  .navbar{
-    padding: 0 5rem;
-  }
-}
+
 
 .navbar-link {
   height: 52px;
@@ -148,18 +140,10 @@ a:hover {
 }
 
 .columns {
-	margin: 0;
+  margin: 0;
 }
 
-@media screen and (min-width: 1088px) {
 
-	.columns {
-	    margin-left: -0.75rem;
-	    margin-right: -0.75rem;
-	    margin-top: -0.75rem;
-	}
-
-}
 // About Us Page
 .is-background-image {
   background: url(/img/baby-smile-4.jpg);
@@ -201,6 +185,7 @@ a:hover {
 
 
 
+
 .expand-button {
   cursor: pointer;
   display: block;
@@ -222,10 +207,10 @@ a:hover {
   position: relative;
   max-height: 200px;
   overflow: hidden;
-  transition: max-height 1s ease;
+  transition: 1s all;
 
   &.-expanded {
-    max-height: 100vh;
+    max-height: 100%;
   }
 }
 
@@ -239,6 +224,11 @@ a:hover {
   background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, .3));
 }
 
+.select:not(.is-multiple):not(.is-loading)::after {
+  border-color: #3273dc;
+  right: 1.125em;
+  z-index: 1;
+}
 
 .content-carousel {
   width: 600px;
@@ -351,7 +341,8 @@ a:hover {
     order: 1;
     margin: 0;
   }
-  & .field{
+
+  & .field {
     order: 3;
     margin-left: auto;
   }
