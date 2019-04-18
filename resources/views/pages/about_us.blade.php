@@ -33,20 +33,44 @@
             юмора и стиля – наши основные ценности.</p>
         </div>
       </div>
-      <div class="columns mh-5">
-        <div class="column is-half px-5">
-          <p class="title is-2">Следите за нами</p>
-          <ul>
-            <li><span class="title">Telegram:</span> <a class="subtitle is-4"
-                href="https://t.me/publictestgroup">@babycheeks_uz</a></li>
-            <li><span class="title">Instagram:</span> <a class="subtitle is-4"
-                href="https://www.instagram.com/babycheeks_tashkent">@babycheeks_tashkent</a></li>
-            <li><span class="title">Facebook:</span> <a class="subtitle is-4" href="#">@babycheeks_tashkent</a></li>
-          </ul>
-        </div>
-        <div class="column d-flex align-center justify-center">
-          <img src="img/babycheeks-logo.png" alt="" width="80%">
-        </div>
+      <div class="mh-5">
+          <p class="title text-center is-2">Следите за нами</p>
+          <div class="columns is-multiline mh-4">
+            <div class="tg-card column is-one-third text-center">
+              <div class="tg-card__image">
+                <img src="img/social_media/telegram.png" alt="" width="15%">
+              </div>
+              <div class="tg-card__description mh-1">
+                <p>Подпишитесь на наш канал в Телеграме, чтобы мгновенно получать самую актуальную информацию от «Babycheeks».</p>
+              </div>
+              <div class="tg-card__link">
+                <a class="subtitle is-4" href="https://t.me/publictestgroup">@babycheeks_uz</a>
+              </div>
+            </div>
+            <div class="insta-card column is-one-third text-center">
+              <div class="insta-card__image">
+                <img src="img/social_media/insta.png" alt="" width="15%">
+              </div>
+              <div class="insta-card__description mh-1">
+                <p>Подпишитесь на наш канал в Инстаграмм, чтобы мгновенно получать самую актуальную информацию от «Babycheeks».</p>
+              </div>
+              <div class="insta-card__link">
+                <a class="subtitle is-4" href="https://www.instagram.com/babycheeks_tashkent">@babycheeks_tashkent</a>
+              </div>
+            </div>
+            <div class="facebook-card column is-one-third text-center">
+              <div class="facebook-card__image">
+                <img src="img/social_media/facebook.png" alt="" width="15%">
+              </div>
+              <div class="facebook-card__description mh-1">
+                <p>Подпишитесь на наш канал в Фейсбук, чтобы мгновенно получать самую актуальную информацию от «Babycheeks».</p>
+              </div>
+              <div class="facebook-card__link">
+                <a class="subtitle is-4" href="#">@babycheeks_tashkent</a>
+              </div>
+            </div>
+          </div>
+
       </div>
     </div>
 
