@@ -2,16 +2,26 @@
   <div class="header__top">
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item" href="https://bulma.io">
-          <img src="{{asset('img/babycheeks-logo.png')}}" width="112" height="28">
-        </a>
-
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
           data-target="navbar-menu-mobile">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </a>
+        <a class="navbar-item" href="https://bulma.io">
+          <img src="{{asset('img/babycheeks-logo.png')}}" width="112" height="28">
+        </a>
+
+        <div class="field d-flex align-center is-hidden-desktop">
+          <p class="control has-icons-left has-icons-right">
+            <input class="input is-rounded" type="email" placeholder="Search">
+            <span class="icon is-small is-left">
+              <i class="fas fa-search"></i>
+            </span>
+          </p>
+        </div>
+
+
       </div>
 
       <div id="navbar-menu-mobile" class="navbar-menu">
@@ -51,7 +61,7 @@
           @endforeach
         </div>
         <div class="navbar-end">
-          <div class="field d-flex align-center">
+          <div class="field d-flex align-center is-hidden-mobile">
             <p class="control has-icons-left has-icons-right">
               <input class="input is-rounded" type="email" placeholder="Search">
               <span class="icon is-small is-left">

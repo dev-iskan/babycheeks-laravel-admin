@@ -5,6 +5,14 @@
 @import 'media.scss';
 @import 'fonts.scss';
 
+.page-color_blue {
+  color: #3A69D3;
+}
+
+.page-color_pink {
+  color: #FF55C2;
+}
+
 /* Scroll Bar */
 
 ::-webkit-scrollbar {
@@ -76,15 +84,20 @@ a:hover {
   }
 }
 
-@media screen and (min-width: 1088px){
+@media screen and (min-width: 1088px) {
   .navbar-dropdown a.navbar-item:hover {
     background-color: transparent;
     color: #0a0a0a;
+  }
+  .navbar{
+    padding: 0 5rem;
+  }
 }
-}
-.navbar-link{
+
+.navbar-link {
   height: 52px;
 }
+
 .navbar-dropdown a.navbar-item::before {
   content: "\f061";
   padding: 0 10px;
@@ -94,11 +107,12 @@ a:hover {
   position: relative;
   transition: .3s all;
 }
-.navbar-dropdown a.navbar-item:hover::before  {
+
+.navbar-dropdown a.navbar-item:hover::before {
   padding: 0 7px;
 }
 
-.navbar-dropdown a.navbar-item  {
+.navbar-dropdown a.navbar-item {
   display: flex;
 }
 
@@ -129,7 +143,7 @@ a:hover {
 }
 
 .social-media__icons a {
-  max-width: 15%;
+  max-width: 5rem;
   padding: 0 20px;
 }
 
@@ -143,7 +157,7 @@ a:hover {
 }
 
 .contactus__container {
-  background: #3A69D3;
+  background: rgb(240, 240, 240);
 
 }
 
@@ -151,12 +165,14 @@ a:hover {
 .no-box-shadow {
   box-shadow: none;
 }
-.card{
+
+.card {
   transition: .3s all;
 }
-.card:hover{
+
+.card:hover {
   transform: translateY(-0.5rem) scale(1.02);
-  box-shadow: 0 1.5rem 4rem rgba(0,0,0,0.15);
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
 }
 
 
@@ -312,6 +328,22 @@ a:hover {
   justify-content: center;
   align-items: stretch;
   margin: 0 auto;
+}
+
+.navbar-brand {
+
+  & .navbar-item {
+    order: 2;
+  }
+
+  & .navbar-burger {
+    order: 1;
+    margin: 0;
+  }
+  & .field{
+    order: 3;
+    margin-left: auto;
+  }
 }
 
 .text-is-right {
