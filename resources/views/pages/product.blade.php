@@ -85,31 +85,7 @@
               </div>
             </div>
 
-            <div class="description-part__modal mh-1">
-              <button class="button is-large modal-button" data-target="modal-ter" aria-haspopup="true"><i
-                  class="fas fa-store"></i>Заказать</button>
-
-              <div id="modal-ter" class="modal">
-                <div class="modal-background"></div>
-                <div class="modal-card">
-                  <header class="modal-card-head ">
-                    <p class="modal-card-title">Заполните Форму</p>
-                    <button class="delete" aria-label="close"></button>
-                  </header>
-                  <section class="modal-card-body">
-                    <div class="field">
-                      <div class="control">
-                        <p class="mh-1">Ваше имя: </p>
-                        <input class="input" type="text" placeholder="Normal input">
-                        <p class="mh-1">Ваш номер: </p>
-                        <input class="input" type="text" placeholder="Normal input">
-                      </div>
-                    </div>
-                    <div class="d-flex flex-end"><a class="button is-danger text-center">Отправить</a></div>
-                  </section>
-                </div>
-              </div>
-            </div>
+            <order-modal></order-modal>
 
             <div class="description-part__product-description container-80 mh-1">
               <div>

@@ -37,11 +37,7 @@ import {
     data() {
       return {
         swiperOptionTop: {
-          spaceBetween: 10,
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev'
-          }
+          slidesPerView: 1
         },
         swiperOptionThumbs: {
           spaceBetween: 10,
@@ -50,21 +46,12 @@ import {
           touchRatio: 0.2,
           slideToClickedSlide: true,
           slidesPerView: 5,
-        },
-        swiperOption: {
-          slidesPerView: 3,
-          spaceBetween: 30,
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true
-          }
         }
       }
 
     },
 
     mounted() {
-      console.log('hello')
       this.$nextTick(() => {
         const swiperTop = this.$refs.swiperTop.swiper
         const swiperThumbs = this.$refs.swiperThumbs.swiper
