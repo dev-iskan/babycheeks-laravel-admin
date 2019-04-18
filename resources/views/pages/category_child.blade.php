@@ -1,5 +1,9 @@
 @extends('layouts.base')
 
+@section('scripts')
+<script src="{{ asset('js/bulma-extensions.js') }}" defer></script>
+@endsection
+
 @section('content')
 <div class="category__child">
   <div class="container is-fluid">
@@ -38,13 +42,6 @@
                     <label for="gender-category__female">Девочкам</label>
                   </div>
                 </a></li>
-            </ul>
-
-            <ul class="mh-2">
-              <li class="title is-6">По Цене</li>
-              <li><input class="slider is-fullwidth" step="1" min="0" max="100" value="50" type="range">
-                <span>От : </span> <output for="sliderWithValue"></output></li>
-
             </ul>
 
             <ul class="mh-2">
