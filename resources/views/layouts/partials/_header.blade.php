@@ -60,8 +60,8 @@
           @endif
           @endforeach
         </div>
-        <div class="navbar-end">
-          <div class="field d-flex align-center is-hidden-mobile ">
+        <div class="navbar-end is-hidden-mobile is-hidden-tablet-only">
+          <div class="field d-flex align-center">
             <p class="control has-icons-left has-icons-right">
               <input class="input is-rounded" type="email" placeholder="Search">
               <span class="icon is-small is-left">
