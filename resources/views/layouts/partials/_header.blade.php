@@ -12,7 +12,7 @@
           <img src="{{asset('img/babycheeks-logo.png')}}" width="112" height="28">
         </a>
 
-        <div class="field d-flex align-center is-hidden-desktop">
+        <div class="field d-flex align-center is-hidden-desktop px-1">
           <p class="control has-icons-left has-icons-right">
             <input class="input is-rounded" type="email" placeholder="Search">
             <span class="icon is-small is-left">
@@ -61,7 +61,7 @@
           @endforeach
         </div>
         <div class="navbar-end">
-          <div class="field d-flex align-center is-hidden-mobile">
+          <div class="field d-flex align-center is-hidden-mobile ">
             <p class="control has-icons-left has-icons-right">
               <input class="input is-rounded" type="email" placeholder="Search">
               <span class="icon is-small is-left">

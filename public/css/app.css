@@ -13997,6 +13997,18 @@ a:hover {
   padding: 0 20px;
 }
 
+.columns {
+  margin: 0;
+}
+
+@media screen and (min-width: 1088px) {
+  .columns {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+    margin-top: -0.75rem;
+  }
+}
+
 .is-background-image {
   background: url(/img/baby-smile-4.jpg);
   background-size: cover;
