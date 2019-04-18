@@ -41,13 +41,6 @@
             </ul>
 
             <ul class="mh-2">
-              <li class="title is-6">По Цене</li>
-              <li><input class="slider is-fullwidth" step="1" min="0" max="100" value="50" type="range">
-                <span>От : </span> <output for="sliderWithValue"></output></li>
-
-            </ul>
-
-            <ul class="mh-2">
               <li class="title is-6">По Возрасту</li>
               <li><a href="#">
                   <div class="field">
