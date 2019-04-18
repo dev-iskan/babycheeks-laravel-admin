@@ -14,3 +14,4 @@ yarn-error.log
 /.DS_Store
 deploy.php
 .php_cs.cache
+package-lock.json
