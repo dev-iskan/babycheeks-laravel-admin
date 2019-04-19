@@ -101,7 +101,7 @@
           axios.post('/api/feedback', this.form)
           .then(response => {
             this.loading = false
-            console.log(response.data.status)
+            this.showAlert(response.data.status)
           })
           .finally(() => {this.clearForm()})
         }
@@ -111,6 +111,14 @@
         this.form.phone = ''
         this.form.text = ''
         this.$v.$reset()
+      },
+      showAlert(text) {
+        this.$swal({
+          showConfirmButton: false,
+          timer: 3000,
+          type: 'success',
+          text
+        })
       }
     }
   }

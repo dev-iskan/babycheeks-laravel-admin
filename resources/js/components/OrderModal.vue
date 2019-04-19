@@ -139,16 +139,23 @@
           .then(response => {
             this.loading = false
             this.closeModal()
-            console.log(response.data.status)
+            this.showAlert(response.data.status)
           })
           .finally(() => {this.clearForm()})
         }
       },
-
       clearForm () {
         this.form.name = ''
         this.form.phone = ''
         this.$v.$reset()
+      },
+      showAlert(text) {
+        this.$swal({
+          showConfirmButton: false,
+          timer: 3000,
+          type: 'success',
+          text
+        })
       }
     }
   }
