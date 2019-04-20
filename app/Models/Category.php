@@ -33,8 +33,9 @@ class Category extends Model implements HasMedia
         'primary'
     ];
 
-    public function scopePrimary($builder) {
-      return $builder->where('primary', true);
+    public function scopePrimary($builder)
+    {
+        return $builder->where('primary', true);
     }
 
     public function children()
@@ -45,6 +46,11 @@ class Category extends Model implements HasMedia
     public function parent()
     {
         return $this->belongsTo(Category::class, 'parent_id');
+    }
+
+    public function isParent()
+    {
+      return $this->children()->exists();
     }
 
     public function products()

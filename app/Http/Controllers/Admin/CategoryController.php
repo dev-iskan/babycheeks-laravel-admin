@@ -21,7 +21,7 @@ class CategoryController extends Controller
         if ($request->parent) {
             return Category::type('parent')->where('slug', '!=', $request->category_slug)->finished()->pluck('name', 'id');
         } elseif ($request->pluck) {
-            return Category::finished()->pluck('name', 'id');
+            return Category::type('children')->finished()->pluck('name', 'id');
         } else {
             return CategoryResource::collection(Category::with(['parent'])->finished()->latest()->paginate(10))->additional([
                  'datatable' => [
