@@ -13,7 +13,5 @@
 
 Route::get('/', 'Front\IndexController');
 Route::get('/about-us', 'Front\AboutUsController');
-Route::get('/c/parent', 'Front\CategoryController@parent');
-Route::get('/c/child', 'Front\CategoryController@child');
+Route::get('/c/{category}', 'Front\CategoryController')->name('category');
 Route::get('/p/product', 'Front\ProductController');
-

@@ -29,16 +29,16 @@
           @foreach ($categories as $category)
           @if ($category->children()->exists())
           <div class="navbar-item has-dropdown is-hoverable is-mega">
-            <div class="navbar-link">
+            <a class="navbar-link" href="{{route('category', $category->slug)}}">
               {{$category->name}}
-            </div>
+            </a>
             <div id="navbar-menu-mobile" class="navbar-dropdown" data-style="width: 18rem;">
               <div class="container is-fluid">
                 <div class="columns">
                   @foreach ($category->children->chunk(4) as $childrenGroup)
                   <div class="column">
                     @foreach ($childrenGroup as $children)
-                    <a class="navbar-item" href="#">
+                    <a class="navbar-item" href="{{route('category', $children->slug)}}">
                       <div class="navbar-content">
                         <p>{{$children->name}}</p>
                       </div>
@@ -54,7 +54,7 @@
 
 
           @else
-          <a class="navbar-item">
+          <a class="navbar-item" href="{{route('category', $category->slug)}}">
             {{$category->name}}
           </a>
           @endif
