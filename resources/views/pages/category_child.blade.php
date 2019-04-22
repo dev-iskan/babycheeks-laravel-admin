@@ -25,8 +25,8 @@
           </nav>
         </div>
         <div class="column">
-          <div class="product-body__product-filter d-flex justify-space-between mh-2">
-            <div class="select is-rounded">
+          <div class="product-body__product-filter d-flex justify-space-between mb-2">
+            <div class="select">
               <select>
                 <option>Rounded dropdown</option>
                 <option>With options</option>

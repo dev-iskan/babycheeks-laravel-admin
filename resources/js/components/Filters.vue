@@ -6,8 +6,11 @@
     :key="key"
     >
       <!-- Special for Akbar -->
-      <span class="title is-6">{{key | title}}</span>
-      <span><a href="#" v-if="query[key]" @click.prevent="resetFilter(key)">Сбросить</a></span>
+      <p class="d-flex justify-space-between field-0">
+        <span class="title is-6">{{key | title}}</span>
+        <span><a href="#" class="is-size-7" v-if="query[key]" @click.prevent="resetFilter(key)">Сбросить</a></span>
+      </p>
+
       <!--  -->
 
       <li
@@ -16,7 +19,7 @@
       >
         <div class="field">
           <input
-            class="is-checkradio is-info is-circle is-small"
+            class="is-checkradio is-info is-small"
             :id="name"
             v-model="filters[key]"
             :value="value"

@@ -184,7 +184,7 @@ a:hover {
   border-radius: 100px;
   content: " ";
   position: absolute;
-  top: 50%;
+  top: 45%;
 }
 
 .navbar-link:not(.is-arrowless) {
@@ -380,4 +380,8 @@ a:hover {
 
 .text-is-center {
   text-align: center;
+}
+
+.title:not(:last-child){
+  margin: 0;
 }
