@@ -30,5 +30,14 @@ class ProductFilters extends FiltersAbstract
           'ages' => Age::pluck('age', 'id'),
       ];
       return $map;
-  }
+    }
+
+    public static function  sortings () {
+      return [
+        'created;asc' => 'Сначала старые',
+        'created;desc' => 'Последние',
+        'price;asc' => 'Сначала дешевле',
+        'price;desc'  => 'Сначала дороже'
+      ];
+    }
 }

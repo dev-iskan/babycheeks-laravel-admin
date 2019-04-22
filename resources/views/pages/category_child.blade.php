@@ -25,14 +25,11 @@
           </nav>
         </div>
         <div class="column">
-          <div class="product-body__product-filter d-flex justify-space-between mh-2">
-            <div class="select is-rounded">
-              <select>
-                <option>Rounded dropdown</option>
-                <option>With options</option>
-              </select>
-            </div>
-          </div>
+          <sort-dropdown
+            :category="{{request()->category}}"
+            :sortings="{{json_encode($sortings)}}"
+            :query="{{json_encode(request()->query())}}"
+          ></sort-dropdown>
           <div class="product-body__product">
             @if ($products->count())
             <div class="columns is-multiline is-mobile">

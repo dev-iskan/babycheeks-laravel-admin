@@ -48,7 +48,7 @@
         ></textarea>
       </div>
 
-      <button type="submit" class="button is-danger mh-3" :class="{'is-loading' : loading}">Отправить</button>
+      <button type="submit" class="button button-pink mh-3" :class="{'is-loading' : loading}">Отправить</button>
     </form>
   </div>
 </template>

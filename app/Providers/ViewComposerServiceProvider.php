@@ -25,6 +25,11 @@ class ViewComposerServiceProvider extends ServiceProvider
           $mappings = ProductFilters::mapping();
           $view->with(compact('mappings'));
         });
+
+        View::composer('pages.category_child', function ($view) {
+          $sortings = ProductFilters::sortings();
+          $view->with(compact('sortings'));
+        });
     }
 
     /**
