@@ -163,6 +163,13 @@ a:hover {
 
 .card {
   transition: .3s all;
+  border-radius: 10px;
+}
+
+.navbar-dropdown {
+  // font-size: 0.875rem;
+  // padding-bottom: 0.5rem;
+  padding-top: 0;
 }
 
 .card:hover {
@@ -170,6 +177,25 @@ a:hover {
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
 }
 
+.navbar-link:not(.is-arrowless)::after {
+  height: 0.5em;
+  width: 0.5em;
+  border: 4px solid transparent;
+  border-radius: 100px;
+  content: " ";
+  position: absolute;
+  top: 50%;
+}
+
+.navbar-link:not(.is-arrowless) {
+  padding-right: 1.5em;
+}
+
+.navbar-link:not(.is-arrowless)::after {
+  border-color: #3273dc;
+  margin-top: 0rem;
+  right: .5em;
+}
 
 
 .child-categories__list li {
