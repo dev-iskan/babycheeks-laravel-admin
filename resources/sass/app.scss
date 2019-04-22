@@ -184,7 +184,7 @@ a:hover {
   border-radius: 100px;
   content: " ";
   position: absolute;
-  top: 50%;
+  top: 45%;
 }
 
 .navbar-link:not(.is-arrowless) {
@@ -385,4 +385,8 @@ a:hover {
 .button-pink {
   background: #FF55C2;
   color: #fff;
+}
+
+.title:not(:last-child){
+  margin: 0;
 }
