@@ -20,7 +20,7 @@
         <div class="column is-half">
           <ul class="child-categories__list columns is-multiline is-mobile">
             @foreach ($category->children as $child)
-              <li class="column is-half-mobile is-half-tablet is-half-desktop"><a href="">{{$child->name}}</a></li>
+              <li class="column is-half-mobile is-half-tablet is-half-desktop"><a href="{{route('category', $child)}}">{{$child->name}}</a></li>
             @endforeach
           </ul>
         </div>
@@ -41,7 +41,7 @@
       <hr>
       <div class="columns is-multiline is-mobile">
         @foreach ($products as $product)
-          @includeIf('pages.partials.product_card', ['product' => $product, 'parent' => true])
+          @includeIf('pages.partials.product_card', compact('product'))
         @endforeach
       </div>
     </div>

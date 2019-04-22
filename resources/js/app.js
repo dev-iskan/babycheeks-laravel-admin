@@ -8,6 +8,7 @@ Vue.component('brand-swiper', () => import(/* webpackChunkName: "js/brand-swiper
 Vue.component('contact-us', () => import(/* webpackChunkName: "js/contact-us" */  './components/ContactUs'))
 Vue.component('order-modal', () => import(/* webpackChunkName: "js/order-modal" */  './components/OrderModal'))
 Vue.component('product-swiper', () => import(/* webpackChunkName: "js/product-swiper" */  './components/ProductSwiper'))
+Vue.component('filters', () => import(/* webpackChunkName: "js/filters" */  './components/Filters'))
 Vue.use(Vuelidate)
 Vue.use(Vuesweetalert)
 const app = new Vue({

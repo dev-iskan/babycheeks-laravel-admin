@@ -15,7 +15,6 @@
                             <a href="#"><img src="{{asset('img/social_media/telegram.png')}}" alt="tg"></a>
                             <a href="#"><img src="{{asset('img/social_media/insta.png')}}" alt="inst"></a>
                             <a href="#"><img src="{{asset('img/social_media/facebook.png')}}" alt="facebook"></a>
-                            <a href="#"><img src="{{asset('img/social_media/youtube.png')}}" alt="youtube"></a>
                         </div>
                     </div>
 
@@ -30,12 +29,9 @@
                 </div>
                 <div class="column is-one-fifth">
                     <ul class="d-flex flex-column-nowrap list-style-none">
-                        <li>Что то там</li>
-                        <li><a href="#">О нас</a></li>
-                        <li><a href="#">Категория</a></li>
-                        <li><a href="#">Категория</a></li>
-                        <li><a href="#">Категория</a></li>
-                        <li><a href="#">Категория</a></li>
+                      @foreach ($categories as $category)
+                        <li><a href="">{{$category->name}}</a></li>
+                      @endforeach
                     </ul>
                 </div>
 

@@ -1,4 +1,4 @@
-<div class="column is-half-mobile is-half-tablet  {{$parent ? 'is-one-third-desktop' : 'is-one-quarter-desktop'}}">
+<div class="column is-half-mobile is-half-tablet is-one-quarter-desktop">
   <a href="#">
     <div class="card no-box-shadow">
       <div class="card-image">

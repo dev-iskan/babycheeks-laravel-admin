@@ -4,12 +4,13 @@
 namespace App\Filters\Product;
 
 use App\Filters\FiltersAbstract;
+use App\Filters\Product\Orders\SortOrder;
 use App\Filters\Product\Filters\AgeFilter;
-use App\Filters\Product\Orders\PriceOrder;
 use App\Filters\Product\Filters\BrandFilter;
 use App\Filters\Product\Filters\PriceFilter;
-use App\Filters\Product\Orders\CreatedOrder;
 use App\Filters\Product\Filters\GenderFilter;
+use App\Models\Brand;
+use App\Models\Age;
 
 class ProductFilters extends FiltersAbstract
 {
@@ -19,7 +20,15 @@ class ProductFilters extends FiltersAbstract
         'ages' => AgeFilter::class,
         'price' => PriceFilter::class,
         // orders
-        'created' => CreatedOrder::class,
-        'priceOrder' => PriceOrder::class
+        'sort'=>SortOrder::class
     ];
+
+    public static function mapping () {
+      $map = [
+          'genders' => ['u' => 'Унисекс', 'm' => 'Мальчики', 'f' => 'Девочки'],
+          'brands' => Brand::pluck('name', 'slug'),
+          'ages' => Age::pluck('age', 'id'),
+      ];
+      return $map;
+  }
 }
