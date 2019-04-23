@@ -33,6 +33,9 @@
 
 
             <br>
+            <div class="description-part__cost mh-1">
+              <p class="title is-3">Product name</p>
+            </div>
 
             <div class="description-part__cost mh-1">
               <p class="subtitle is-3">56.000 sum</p>
@@ -42,47 +45,15 @@
               <span class="tag is-success">В Наличии</span>
             </div>
 
-            <div class="description-part__dropdown mh-1 d-flex align-center">
-              <p class="subtitle is-6 ">Размер: </p>
-              <div class="dropdown is-hoverable">
-                <div class="dropdown-trigger">
-                  <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
-                    <span>Hover me</span>
-                    <span class="icon is-small">
-                      <i class="fas fa-angle-down" aria-hidden="true"></i>
-                    </span>
-                  </button>
-                </div>
-                <div class="dropdown-menu" id="dropdown-menu3" role="menu">
-                  <div class="dropdown-content">
-                    <a href="#" class="dropdown-item">
-                      Overview
-                    </a>
-                    <a href="#" class="dropdown-item">
-                      Modifiers
-                    </a>
-                    <a href="#" class="dropdown-item">
-                      Grid
-                    </a>
-                    <a href="#" class="dropdown-item">
-                      Form
-                    </a>
-                    <a href="#" class="dropdown-item">
-                      Elements
-                    </a>
-                    <a href="#" class="dropdown-item">
-                      Components
-                    </a>
-                    <a href="#" class="dropdown-item">
-                      Layout
-                    </a>
-                    <hr class="dropdown-divider">
-                    <a href="#" class="dropdown-item">
-                      More
-                    </a>
-                  </div>
-                </div>
-              </div>
+            <div class="description-part__cost mh-1">
+              <p class="subtitle is-6">Пол:
+                <span class="tag is-link">Мальчики</span>
+                <span class="tag button-pink">Мальчики</span>
+            </p>
+            </div>
+
+            <div class="description-part__cost mh-1">
+              <p class="subtitle is-6">Возраст: </p>
             </div>
 
             <order-modal></order-modal>
