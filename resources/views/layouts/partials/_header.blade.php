@@ -61,7 +61,7 @@
           @endforeach
         </div>
         <div class="navbar-end is-hidden-mobile is-hidden-tablet-only">
-          <div class="dropdown is-active field d-flex align-center">
+          <div class="dropdown field d-flex align-center">
             <p class="control has-icons-left has-icons-right dropdown-trigger">
               <input class="input" type="email" placeholder="Search" aria-haspopup="true" aria-controls="dropdown-menu">
               <span class="icon is-small is-left">

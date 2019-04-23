@@ -47,13 +47,20 @@
 
             <div class="description-part__cost mh-1">
               <p class="subtitle is-6">Пол:
-                <span class="tag is-link">Мальчики</span>
-                <span class="tag button-pink">Мальчики</span>
+                <span class="tag is-link is-medium"><i class="fas fa-male pr-1"></i>Мальчики</span>
+                <span class="tag is-danger is-medium"><i class="fas fa-female pr-1"></i>Девочки</span>
+                <span class="tag is-danger is-medium"><i class="fas fa-female pr-1"></i>Оба</span>
             </p>
             </div>
 
             <div class="description-part__cost mh-1">
-              <p class="subtitle is-6">Возраст: </p>
+              <p class="subtitle is-6">Возраст:
+              <ul>
+                <li>1 месяц</li>
+              </ul>
+
+              </p>
+
             </div>
 
             <order-modal></order-modal>

@@ -38,7 +38,14 @@
                 @endforeach
             </div>
             @else
-            Товары не найдены
+            <div class="section__no-product">
+              <p class="is-size-4 text-center">
+              <i class="fas fa-exclamation-circle pr-1 page-color_pink"></i>
+              На данный момент нет продуктов
+              <i class="fas fa-exclamation-circle pl-1 page-color_blue"></i>
+            </p>
+
+            </div>
             @endif
           </div>
 
