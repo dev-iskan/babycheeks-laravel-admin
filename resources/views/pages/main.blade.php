@@ -5,86 +5,20 @@
 <div class="album container text-is-center">
   <div class="tile is-ancestor">
     <div class="tile is-4 is-vertical is-parent">
-      <div class="tile is-child box">
-          <article class="tile is-child">
-              <!-- Put any content you want -->
-              <figure class="image is-4by3">
-                <img src="https://bulma.io/images/placeholders/640x480.png">
-              </figure>
-              <div class="d-flex flex-column-nowrap">
-                <p class="is-size-3 has-text-weight-semibold">Middle</p>
-                <p class="is-size-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, sunt?</p>
-              </div>
-            </article>
-      </div>
-      <div class="tile is-child box">
-          <article class="tile is-child">
-              <!-- Put any content you want -->
-              <figure class="image is-4by3">
-                <img src="https://bulma.io/images/placeholders/640x480.png">
-              </figure>
-              <div class="d-flex flex-column-nowrap">
-                <p class="is-size-3 has-text-weight-semibold">Middle</p>
-                <p class="is-size-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, perspiciatis! Praesentium.</p>
-              </div>
-            </article>
-      </div>
+      @include('pages.partials.mainpage_category', ['category'  => $categories[0]])
+      @include('pages.partials.mainpage_category', ['category'  => $categories[1]])
     </div>
     <div class="tile is-parent">
-      <div class="tile is-child box">
-        <article class="tile is-child">
-            <!-- Put any content you want -->
-            <figure class="image is-4by3">
-              <img src="https://bulma.io/images/placeholders/640x480.png">
-            </figure>
-            <div class="d-flex flex-column-nowrap"  style="padding: 2rem 0;">
-              <p class="is-size-3 has-text-weight-semibold">Middle</p>
-              <p class="is-size-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quas aut aspernatur?</p>
-            </div>
-          </article>
-      </div>
+        @include('pages.partials.mainpage_category', ['category'  => $categories[2]])
     </div>
 </div>
 <div class="tile is-ancestor">
 <div class="tile is-parent">
-      <div class="tile is-child box">
-        <article class="tile is-child">
-            <!-- Put any content you want -->
-            <figure class="image is-4by3">
-              <img src="https://bulma.io/images/placeholders/640x480.png">
-            </figure>
-            <div class="d-flex flex-column-nowrap"  style="padding: 2rem 0;">
-              <p class="is-size-3 has-text-weight-semibold">Middle</p>
-              <p class="is-size-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quas aut aspernatur?</p>
-            </div>
-          </article>
-      </div>
+    @include('pages.partials.mainpage_category', ['category'  => $categories[3]])
     </div>
     <div class="tile is-4 is-vertical is-parent">
-      <div class="tile is-child box">
-          <article class="tile is-child">
-              <!-- Put any content you want -->
-              <figure class="image is-4by3">
-                <img src="https://bulma.io/images/placeholders/640x480.png">
-              </figure>
-              <div class="d-flex flex-column-nowrap">
-                <p class="is-size-3 has-text-weight-semibold">Middle</p>
-                <p class="is-size-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, sunt?</p>
-              </div>
-            </article>
-      </div>
-      <div class="tile is-child box">
-          <article class="tile is-child">
-              <!-- Put any content you want -->
-              <figure class="image is-4by3">
-                <img src="https://bulma.io/images/placeholders/640x480.png">
-              </figure>
-              <div class="d-flex flex-column-nowrap">
-                <p class="is-size-3 has-text-weight-semibold">Middle</p>
-                <p class="is-size-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, perspiciatis! Praesentium.</p>
-              </div>
-            </article>
-      </div>
+        @include('pages.partials.mainpage_category', ['category'  => $categories[4]])
+        @include('pages.partials.mainpage_category', ['category'  => $categories[5]])
     </div>
 
 </div>

@@ -4,7 +4,7 @@
             <div class="columns container">
                 <div class="column is-two-fifths">
                     <div>
-                        <a href="#">
+                        <a href="{{route('main')}}">
                             <img src="{{asset('img/babycheeks-logo.png')}}" alt="footer-logo" width="40%">
                         </a>
                     </div>

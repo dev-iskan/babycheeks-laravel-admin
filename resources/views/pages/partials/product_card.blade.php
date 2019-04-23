@@ -1,5 +1,5 @@
 <div class="column is-half-mobile is-half-tablet is-one-quarter-desktop">
-  <a href="#">
+  <a href="{{route('product', $product)}}">
     <div class="card no-box-shadow">
       <div class="card-image">
         <figure class="image is-4by3">
