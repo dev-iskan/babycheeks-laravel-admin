@@ -60,7 +60,7 @@
             </div>
           </div>
           <div class="d-flex flex-end">
-            <button type="submit" class="button is-danger text-center" :class="{'is-loading' : loading}">
+            <button type="submit" class="button button-pink text-center" :class="{'is-loading' : loading}">
               Отправить
             </button>
           </div>

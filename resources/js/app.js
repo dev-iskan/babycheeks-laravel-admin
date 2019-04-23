@@ -9,6 +9,7 @@ Vue.component('contact-us', () => import(/* webpackChunkName: "js/contact-us" */
 Vue.component('order-modal', () => import(/* webpackChunkName: "js/order-modal" */  './components/OrderModal'))
 Vue.component('product-swiper', () => import(/* webpackChunkName: "js/product-swiper" */  './components/ProductSwiper'))
 Vue.component('filters', () => import(/* webpackChunkName: "js/filters" */  './components/Filters'))
+Vue.component('sort-dropdown', () => import(/* webpackChunkName: "js/sort-dropdown" */  './components/SortDropdown'))
 Vue.use(Vuelidate)
 Vue.use(Vuesweetalert)
 const app = new Vue({
