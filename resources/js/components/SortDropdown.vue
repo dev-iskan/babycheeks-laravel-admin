@@ -1,6 +1,6 @@
 <template>
-  <div class="product-body__product-filter d-flex justify-space-between mh-2">
-    <div class="select is-rounded" v-if="selected">
+  <div class="product-body__product-filter d-flex flex-end mh-2">
+    <div class="select" v-if="selected">
       <select v-model="selected" @change="selectOrder">
         <option
           v-for="(name, value) in sortings"

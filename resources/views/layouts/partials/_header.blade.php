@@ -61,14 +61,35 @@
           @endforeach
         </div>
         <div class="navbar-end is-hidden-mobile is-hidden-tablet-only">
-          <div class="field d-flex align-center">
-            <p class="control has-icons-left has-icons-right">
-              <input class="input" type="email" placeholder="Search">
+          <div class="dropdown is-active field d-flex align-center">
+            <p class="control has-icons-left has-icons-right dropdown-trigger">
+              <input class="input" type="email" placeholder="Search" aria-haspopup="true" aria-controls="dropdown-menu">
               <span class="icon is-small is-left">
                 <i class="fas fa-search"></i>
               </span>
             </p>
+            <div class="dropdown-style dropdown-menu" id="dropdown-menu" role="menu">
+              <div class="dropdown-content">
+                <a href="#" class="dropdown-item">
+                  Dropdown item
+                </a>
+                <a class="dropdown-item">
+                  Other dropdown item
+                </a>
+                <a href="#" class="dropdown-item is-active">
+                  Active dropdown item
+                </a>
+                <a href="#" class="dropdown-item">
+                  Other dropdown item
+                </a>
+                <hr class="dropdown-divider">
+                <a href="#" class="dropdown-item">
+                  With a divider
+                </a>
+              </div>
+            </div>
           </div>
+
         </div>
     </nav>
   </div>

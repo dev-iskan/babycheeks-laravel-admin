@@ -161,10 +161,17 @@ a:hover {
   box-shadow: none;
 }
 
+
 .card {
   transition: .3s all;
   border-radius: 10px;
+
+  & .card-image{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
 }
+
 
 .navbar-dropdown {
   // font-size: 0.875rem;
@@ -387,6 +394,7 @@ a:hover {
   color: #fff;
 }
 
-.title:not(:last-child){
-  margin: 0;
+.dropdown-style{
+  padding-top: 0;
+  width: 100%;
 }

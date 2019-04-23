@@ -15,5 +15,3 @@ mix.js('resources/js/app.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css')
    .extract(['vue', 'axios'])
    .purgeCss();
-
-mix.js('resources/js/bulma-extensions.js', 'public/js');

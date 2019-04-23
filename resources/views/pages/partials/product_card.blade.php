@@ -6,12 +6,10 @@
           {{$product->getFirstMedia('products')}}
         </figure>
       </div>
-      <div class="card-content pa-0">
-        <div class="pa-1">
-        <p class="title is-6">{{$product->name}}</p>
-        <p>Text</p>
-        </div>
-        <p class="title is-6 text-center pa-1">{{$product->formatted_price}}</p>
+      <div class="card-content pa-1">
+        <p class="is-size-6">{{$product->name}}</p>
+        <p class="is-size-7">Carter's</p>
+        <p class="title is-6 text-right py-1">{{$product->formatted_price}}</p>
       </div>
     </div>
   </a>
