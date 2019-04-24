@@ -32,6 +32,7 @@ class StoreProductRequest extends FormRequest
             'price' => 'required',
             'ages' => 'array|required',
             'images' => 'array|required',
+            'images.*' => 'required'
         ];
     }
 }

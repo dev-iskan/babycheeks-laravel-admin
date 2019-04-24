@@ -11,9 +11,7 @@
         <a class="navbar-item" href="{{route('main')}}">
           <img src="{{asset('img/babycheeks-logo.png')}}" width="112" height="28">
         </a>
-        {{-- <div class="navbar-end is-hidden-mobile is-hidden-tablet-only">
-            <search-dropdown mobile></search-dropdown>
-        </div> --}}
+        <search-dropdown mobile></search-dropdown>
 
       </div>
 
@@ -55,8 +53,9 @@
           @endforeach
           @endif
         </div>
-
-        {{-- <search-dropdown></search-dropdown> --}}
+        <div class="navbar-end">
+          <search-dropdown></search-dropdown>
+        </div>
     </nav>
   </div>
 

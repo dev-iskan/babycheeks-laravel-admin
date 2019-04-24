@@ -1,13 +1,21 @@
 <template>
   <div
     class="dropdown field d-flex align-center"
-    :class="{'is-active': loaded, 'is-hidden-desktop': mobile, 'px-1': mobile}"
+    :class="{'is-active': loaded, 'is-hidden-desktop': mobile, 'px-1': mobile,  'is-hidden-touch': !mobile, 'is-hidden-desktop-only': !mobile}"
   >
     <p class="control has-icons-left has-icons-right dropdown-trigger">
-      <input v-model="query" type="text" class="input" @blur="focusLost" placeholder="Поиск продуктов" aria-haspopup="true"
+      <input
+        v-model="query"
+        type="text"
+        class="input"
+        placeholder="Поиск продуктов"
+        aria-haspopup="true"
         aria-controls="dropdown-menu">
       <span class="icon is-small is-left">
         <i class="fas fa-search"></i>
+      </span>
+      <span v-if="query" @click="query = ''" class="icon is-small is-right has-text-danger cursor">
+        <i class="fas fa-window-close"></i>
       </span>
     </p>
     <div class="dropdown-style dropdown-menu" id="dropdown-menu" role="menu">
@@ -20,7 +28,6 @@
         <span class="dropdown-item">Нет таких товаров</span>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -58,16 +65,15 @@
           }).catch((err) => {
 
           });
-      }, 1000),
-
-      focusLost(event) {
-        this.loaded = false
-      }
+      }, 400)
     }
   }
 
 </script>
 
 <style lang="scss" scoped>
-
+  .cursor {
+    pointer-events: auto!important;
+    cursor: pointer;
+  }
 </style>
