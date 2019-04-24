@@ -17,7 +17,7 @@
     <div class="child__product-body">
       <div class="columns">
 
-        <div class="column is-one-quarter">
+        <div class="column is-one-fifth">
 
           <div id="anchorsReference" class="bd-anchors-reference"></div>
           <nav id="anchors" class="product-body__filter bd-anchors is-active">
