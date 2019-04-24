@@ -26,6 +26,7 @@
 
       <div id="navbar-menu-mobile" class="navbar-menu">
         <div class="navbar-start">
+          @if($categories->count())
           @foreach ($categories as $category)
           @if ($category->children()->exists())
           <div class="navbar-item has-dropdown is-hoverable is-mega">
@@ -59,6 +60,7 @@
           </a>
           @endif
           @endforeach
+          @endif
         </div>
 
         <search-dropdown></search-dropdown>

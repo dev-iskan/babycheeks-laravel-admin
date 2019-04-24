@@ -17,7 +17,7 @@ class ViewComposerServiceProvider extends ServiceProvider
     public function register()
     {
         View::composer(['layouts.partials._header', 'layouts.partials._footer'], function ($view) {
-            $categories = Category::type('parent')->finished()->with('children')->get();
+            $categories = Category::type('parent')->finished()->with('children')->limit(5)->get();
             $view->with(compact('categories'));
         });
 

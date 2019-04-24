@@ -29,9 +29,12 @@
                 </div>
                 <div class="column is-one-fifth">
                     <ul class="d-flex flex-column-nowrap list-style-none">
-                      @foreach ($categories as $category)
-                        <li><a href="">{{$category->name}}</a></li>
-                      @endforeach
+                        <li><a href="{{route('about-us')}}">О нас</a></li>
+                      @if ($categories->count())
+                        @foreach ($categories as $category)
+                          <li><a href="{{route('category', $category)}}">{{$category->name}}</a></li>
+                        @endforeach
+                      @endif
                     </ul>
                 </div>
 

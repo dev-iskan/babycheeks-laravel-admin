@@ -9,31 +9,29 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function __invoke(Request $request,Category $category)
+    public function __invoke(Request $request, Category $category)
     {
-      if($category->isParent()) {
-        return $this->parent($category);
-      }
+        if ($category->isParent()) {
+            return $this->parent($category);
+        }
 
-      return $this->child($request, $category);
-
+        return $this->child($request, $category);
     }
 
 
     public function parent(Category $category)
     {
-
-      $category->load(['children']);
-      $ids = $category->children()->pluck('id')->toArray();
-      $products = Product::whereHas('categories', function ($query) use ($ids) {
-        $query->whereIn('categories.id', $ids);
-      })->inRandomOrder()->finished()->limit(8)->get();
-      return view('pages.category_parent', compact('category', 'products'));
+        $category->load(['children']);
+        $ids = $category->children()->pluck('id')->toArray();
+        $products = Product::with(['brand', 'ages', 'media'])->whereHas('categories', function ($query) use ($ids) {
+            $query->whereIn('categories.id', $ids);
+        })->inRandomOrder()->finished()->limit(8)->get();
+        return view('pages.category_parent', compact('category', 'products'));
     }
 
     public function child(Request $request, Category $category)
     {
-      $products = $category->products()->with(['brand', 'ages'])->filter($request)->finished()->paginate(1);
-      return view('pages.category_child', compact('products'));
+        $products = $category->products()->with(['brand', 'ages', 'media'])->filter($request)->finished()->paginate(20);
+        return view('pages.category_child', compact('products'));
     }
 }

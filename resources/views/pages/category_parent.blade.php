@@ -40,9 +40,11 @@
       <p class="title is-4 text-center">Популярные Продукты</p>
       <hr>
       <div class="columns is-multiline is-mobile">
-        @foreach ($products as $product)
-          @includeIf('pages.partials.product_card', compact('product'))
-        @endforeach
+        @if ($products->count())
+          @foreach ($products as $product)
+            @includeIf('pages.partials.product_card', compact('product'))
+          @endforeach
+        @endif
       </div>
     </div>
   </div>
