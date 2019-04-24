@@ -49,17 +49,22 @@
               <p class="subtitle is-6">Пол:
                 <span class="tag is-link is-medium"><i class="fas fa-male pr-1"></i>Мальчики</span>
                 <span class="tag is-danger is-medium"><i class="fas fa-female pr-1"></i>Девочки</span>
-                <span class="tag is-danger is-medium"><i class="fas fa-female pr-1"></i>Оба</span>
+                <span class="tag is-primary is-medium"><i class="fas fa-restroom pr-1"></i>Юнисекс</span>
             </p>
             </div>
 
             <div class="description-part__cost mh-1">
-              <p class="subtitle is-6">Возраст:
-              <ul>
+              <p class="is-size-5">Возраст
+              <ul class="list-style-circle mleft-3">
                 <li>1 месяц</li>
+                <li>2 месяца</li>
+                <li>3 месяца</li>
+                <li>1 год</li>
               </ul>
-
               </p>
+
+
+
 
             </div>
 

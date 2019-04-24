@@ -249,7 +249,12 @@
 .list-style-default {
     list-style: none;
 }
-
+.list-style-square{
+  list-style: square;
+}
+.list-style-circle{
+  list-style: circle;
+}
 /*Display Flex*/
 .display-none {
     display: none;
