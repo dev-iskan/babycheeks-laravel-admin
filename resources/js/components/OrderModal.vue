@@ -2,9 +2,9 @@
   <div class="description-part__modal mh-1">
     <button
       @click="openModal"
-      class="button is-large modal-button"
+      class="button is-info is-large modal-button"
     >
-      <i class="fas fa-store"></i>
+      <i class="fa fa-shopping-cart"></i>
       Заказать
     </button>
 
