@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="column">
-      <img src="img/babycheeks-logo.png" alt="logo">
+      <img src="{{asset('img/babycheeks-logo.png')}}" alt="logo">
     </div>
   </div>
 </div>

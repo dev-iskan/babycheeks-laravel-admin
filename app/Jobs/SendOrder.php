@@ -33,7 +33,7 @@ class SendOrder implements ShouldQueue
             'phone' => $this->data['phone'],
             'name' => $this->data['name'],
             'product_name' => $this->product->name,
-            'url' => 'http://babycheeks.test'
+            'url' => route('product', $this->product)
         ])->render();
         $response = Telegram::sendMessage([
             'chat_id' => config('telegram.chats.user_id'),

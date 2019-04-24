@@ -27,13 +27,13 @@ class CategoryController extends Controller
       $ids = $category->children()->pluck('id')->toArray();
       $products = Product::whereHas('categories', function ($query) use ($ids) {
         $query->whereIn('categories.id', $ids);
-      })->inRandomOrder()->limit(8)->get();
+      })->inRandomOrder()->finished()->limit(8)->get();
       return view('pages.category_parent', compact('category', 'products'));
     }
 
     public function child(Request $request, Category $category)
     {
-      $products = $category->products()->with(['brand', 'ages'])->filter($request)->paginate(1);
+      $products = $category->products()->with(['brand', 'ages'])->filter($request)->finished()->paginate(1);
       return view('pages.category_child', compact('products'));
     }
 }
