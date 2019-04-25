@@ -21,25 +21,22 @@
           </nav>
         </div>
         <div class="column">
-          <sort-dropdown
-            :category="{{request()->category}}"
-            :sortings="{{json_encode($sortings)}}"
-            :query="{{json_encode(request()->query())}}"
-          ></sort-dropdown>
+          <sort-dropdown :category="{{request()->category}}" :sortings="{{json_encode($sortings)}}"
+            :query="{{json_encode(request()->query())}}"></sort-dropdown>
           <div class="product-body__product">
             @if ($products->count())
             <div class="columns is-multiline is-mobile">
-                @foreach ($products as $product)
-                  @include('pages.partials.product_card', compact('product'))
-                @endforeach
+              @foreach ($products as $product)
+              @include('pages.partials.product_card', compact('product'))
+              @endforeach
             </div>
             @else
             <div class="section__no-product">
               <p class="is-size-4 text-center">
-              <i class="fas fa-exclamation-circle pr-1 page-color_pink"></i>
-              На данный момент нет продуктов
-              <i class="fas fa-exclamation-circle pl-1 page-color_blue"></i>
-            </p>
+                <i class="fas fa-exclamation-circle pr-1 page-color_pink"></i>
+                На данный момент нет продуктов
+                <i class="fas fa-exclamation-circle pl-1 page-color_blue"></i>
+              </p>
 
             </div>
             @endif

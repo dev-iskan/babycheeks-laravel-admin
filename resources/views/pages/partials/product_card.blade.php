@@ -4,9 +4,9 @@
       <div class="card-image">
         <figure class="image is-4by3">
           @if($product->getFirstMedia('products'))
-            {{$product->getFirstMedia('products')}}
+          {{$product->getFirstMedia('products')}}
           @else
-            <img src="{{asset('img/default.png')}}" alt="logo">
+          <img src="{{asset('img/default.png')}}" alt="logo">
           @endif
 
         </figure>

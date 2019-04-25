@@ -14,9 +14,7 @@
 
       <div class="columns">
         <div class="column is-half">
-          <product-swiper
-            :images="{{$images}}"
-          ></product-swiper>
+          <product-swiper :images="{{$images}}"></product-swiper>
         </div>
 
         <div class="column">
@@ -37,23 +35,26 @@
             <div class="description-part__cost mh-1">
               <p class="subtitle is-6">Пол:
                 @if($product->gender == 'u')
-                  <span class="tag is-primary is-medium"><i class="fas fa-restroom pr-1"></i>{{$product->formatted_gender}}</span>
+                <span class="tag is-primary is-medium"><i
+                    class="fas fa-restroom pr-1"></i>{{$product->formatted_gender}}</span>
                 @elseif($product->gender == 'm')
-                  <span class="tag is-link is-medium"><i class="fas fa-male pr-1"></i>{{$product->formatted_gender}}</span>
+                <span class="tag is-link is-medium"><i
+                    class="fas fa-male pr-1"></i>{{$product->formatted_gender}}</span>
                 @else
-                  <span class="tag is-danger is-medium"><i class="fas fa-female pr-1"></i>{{$product->formatted_gender}}</span>
+                <span class="tag is-danger is-medium"><i
+                    class="fas fa-female pr-1"></i>{{$product->formatted_gender}}</span>
                 @endif
-            </p>
+              </p>
             </div>
 
             @if($product->ages()->exists())
             <div class="description-part__cost mh-1">
               <p class="is-size-5">Возраст
-              <ul class="mleft-3">
-                @foreach ($product->ages as $item)
+                <ul class="mleft-3">
+                  @foreach ($product->ages as $item)
                   <li>✓ {{$item->age}}</li>
-                @endforeach
-              </ul>
+                  @endforeach
+                </ul>
               </p>
             </div>
             @endif
@@ -73,7 +74,7 @@
       <hr>
       <div class="columns is-multiline is-mobile">
         @foreach ($similar_products as $item)
-          @include('pages.partials.product_card', ['product' => $item])
+        @include('pages.partials.product_card', ['product' => $item])
         @endforeach
       </div>
     </div>
