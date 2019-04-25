@@ -6,11 +6,7 @@
 
     <div class="child__breadcrumb mh-2 text-center">
       <nav class="breadcrumb d-flex justify-center" aria-label="breadcrumbs">
-        <ul>
-          <li><a href="#">Main</a></li>
-          <li><a href="#">Category Parent</a></li>
-          <li class="is-active"><a href="#" aria-current="page">Category Child</a></li>
-        </ul>
+        <p class="title is-3 text-center">{{request()->category->name}}</p>
       </nav>
     </div>
 

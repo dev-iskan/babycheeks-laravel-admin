@@ -6,10 +6,6 @@
 
     <div class="parent__breadcrumb mh-2 text-center">
       <nav class="breadcrumb d-flex justify-center" aria-label="breadcrumbs">
-        <ul>
-          <li><a href="#">Main</a></li>
-          <li class="is-active"><a href="#" aria-current="page">Category</a></li>
-        </ul>
       </nav>
     </div>
 
