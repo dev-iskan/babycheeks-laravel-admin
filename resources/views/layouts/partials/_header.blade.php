@@ -9,8 +9,8 @@
           <span aria-hidden="true"></span>
         </a>
         <a class="navbar-item" href="{{route('main')}}">
-          <img src="{{asset('img/mobile-logo.png')}}">
-          {{-- <img src="{{asset('img/babycheeks-logo.png')}}"> --}}
+          <img class="is-hidden-desktop" src="{{asset('img/mobile-logo.png')}}">
+          <img class="is-hidden-touch" src="{{asset('img/babycheeks-logo.png')}}">
         </a>
         <search-dropdown mobile></search-dropdown>
 

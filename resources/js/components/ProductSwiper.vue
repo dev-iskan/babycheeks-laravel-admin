@@ -65,6 +65,50 @@ import {
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+.swiper-container {
+  background-color: transparent;
+}
 
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+.gallery-top .swiper-wrapper .swiper-slide {
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.gallery-top .swiper-wrapper .swiper-slide img {
+  width: 60%;
+
+}
+
+.gallery-thumbs {
+  height: 20% !important;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.gallery-thumbs .swiper-slide {
+  width: 12.5% !important;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.gallery-thumbs .swiper-slide-active {
+  opacity: 1;
+}
+
+.gallery-thumbs .swiper-wrapper {
+  -webkit-transform: none !important;
+  transform: none !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>

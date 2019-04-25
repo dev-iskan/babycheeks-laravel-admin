@@ -49,9 +49,9 @@
             @if($product->ages()->exists())
             <div class="description-part__cost mh-1">
               <p class="is-size-5">Возраст
-              <ul class="list-style-circle mleft-3">
+              <ul class="mleft-3">
                 @foreach ($product->ages as $item)
-                  <li>{{$item->age}}</li>
+                  <li>✓ {{$item->age}}</li>
                 @endforeach
               </ul>
               </p>
