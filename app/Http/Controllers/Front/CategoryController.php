@@ -19,7 +19,7 @@ class CategoryController extends Controller
     }
 
 
-    public function parent(Category $category)
+    protected function parent(Category $category)
     {
         $category->load(['children']);
         $ids = $category->children()->pluck('id')->toArray();
@@ -29,7 +29,7 @@ class CategoryController extends Controller
         return view('pages.category_parent', compact('category', 'products'));
     }
 
-    public function child(Request $request, Category $category)
+    protected function child(Request $request, Category $category)
     {
         $products = $category->products()->with(['brand', 'ages', 'media'])->filter($request)->finished()->paginate(20);
         return view('pages.category_child', compact('products'));

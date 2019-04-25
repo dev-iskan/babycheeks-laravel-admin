@@ -6,7 +6,15 @@
     {{-- CSRF Token --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Babycheeks - Интернет магазин детской одежды от ведущих брендов</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139135663-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
+      gtag('config', 'UA-139135663-1');
+    </script>
     {{-- Styles --}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('styles')
