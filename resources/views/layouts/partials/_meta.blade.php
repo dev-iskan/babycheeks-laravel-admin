@@ -5,7 +5,19 @@
     <link rel="icon" href="{{asset('favicon.ico')}}">
     {{-- CSRF Token --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    {{-- Meta title and description --}}
     <title>Babycheeks - Интернет магазин детской одежды от ведущих брендов</title>
+    <meta name="description" content="Интернет магазин детской одежды от ведущих брендов">
+    <meta name="robots" content="index, follow">
+    {{-- Open Graph meta --}}
+    <meta name="og:url" content="{{ url()->full()}}">
+    <meta name="og:type" content="website">
+    <meta name="og:locale" content="ru_RU">
+    <meta name="og:title" content="Babycheeks - Интернет магазин детской одежды от ведущих брендов">
+    <meta name="og:description" content="Интернет магазин детской одежды от ведущих брендов">
+    <meta name="og:image" content="{{asset('img/babycheeks-logo.png')}}">
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139135663-1"></script>
     <script>

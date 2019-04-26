@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="album container text-is-center pa-1">
-  @if($categories->count())
+  @if($categories->count() == 6)
   <div class="tile is-ancestor">
     <div class="tile is-4 is-vertical is-parent">
       @include('pages.partials.mainpage_category', ['category' => $categories[0]])
