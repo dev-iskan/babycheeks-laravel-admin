@@ -8,11 +8,8 @@
       <img src="{{asset('img/default.png')}}" alt="logo">
       @endif
     </figure>
-    <div class="d-flex flex-column-nowrap">
+    <div class="d-flex flex-column-nowrap pa-1">
       <p class="is-size-3 has-text-weight-semibold">{{$category->name}}</p>
-      <div>
-        {!! $category->description !!}
-      </div>
     </div>
   </article>
 </div>

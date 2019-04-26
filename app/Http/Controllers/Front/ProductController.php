@@ -19,6 +19,8 @@ class ProductController extends Controller
           $query->whereIn('categories.id', $ids);
         })->
         finished()->inRandomOrder()->limit(4)->get();
-      return view('pages.product', compact('product', 'similar_products', 'images'));
+
+      $title = $product->name.' - Babycheeks';
+      return view('pages.product', compact('product', 'similar_products', 'images', 'title'));
     }
 }

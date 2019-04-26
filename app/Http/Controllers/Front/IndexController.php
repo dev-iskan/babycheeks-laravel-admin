@@ -10,6 +10,7 @@ class IndexController extends Controller
     public function __invoke()
     {
       $categories = Category::with(['media'])->finished()->primary()->inRandomOrder()->limit(6)->get();
-      return view('pages.main', compact('categories'));
+      $title  = 'Babycheeks';
+      return view('pages.main', compact('categories', 'title'));
     }
 }

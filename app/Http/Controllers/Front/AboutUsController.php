@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 class AboutUsController extends Controller
 {
     public function __invoke () {
-      return view('pages.about_us');
+      $title =  'О нас - Babycheeks';
+      return view('pages.about_us', compact('title'));
     }
 }

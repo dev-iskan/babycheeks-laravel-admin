@@ -26,12 +26,18 @@ class CategoryController extends Controller
         $products = Product::with(['brand', 'ages', 'media'])->whereHas('categories', function ($query) use ($ids) {
             $query->whereIn('categories.id', $ids);
         })->inRandomOrder()->finished()->limit(8)->get();
-        return view('pages.category_parent', compact('category', 'products'));
+        $title = $this->title($category);
+        return view('pages.category_parent', compact('category', 'products', 'title'));
     }
 
     protected function child(Request $request, Category $category)
     {
         $products = $category->products()->with(['brand', 'ages', 'media'])->filter($request)->finished()->paginate(20);
-        return view('pages.category_child', compact('products'));
+        $title = $this->title($category);
+        return view('pages.category_child', compact('products', 'title'));
+    }
+
+    protected function title($category) {
+      return $category->name.' - Babycheeks';
     }
 }
