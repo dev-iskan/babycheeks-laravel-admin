@@ -11,12 +11,14 @@
     <meta name="description" content="Интернет магазин детской одежды от ведущих брендов">
     <meta name="robots" content="index, follow">
     {{-- Open Graph meta --}}
-    <meta name="og:url" content="{{ url()->full()}}">
-    <meta name="og:type" content="website">
-    <meta name="og:locale" content="ru_RU">
-    <meta name="og:title" content="Babycheeks - Интернет магазин детской одежды от ведущих брендов">
-    <meta name="og:description" content="Интернет магазин детской одежды от ведущих брендов">
-    <meta name="og:image" content="{{asset('img/babycheeks-logo.png')}}">
+    <meta property="og:url" content="{{ url()->full()}}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:title" content="Babycheeks - Интернет магазин детской одежды от ведущих брендов" />
+    <meta property="og:description" content="Интернет магазин детской одежды от ведущих брендов" />
+    <meta property="og:image" content="{{asset('img/mobile-logo.png')}}" />
+    <meta property="og:image:width" content="150" />
+    <meta property="og:image:height" content="150" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139135663-1"></script>
