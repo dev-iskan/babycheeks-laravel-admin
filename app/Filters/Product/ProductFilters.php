@@ -24,10 +24,19 @@ class ProductFilters extends FiltersAbstract
     ];
 
     public static function mapping () {
+      $products = request()->category->load(['products'])->products->pluck('id')->toArray();
+      $brands = Brand::whereHas('products', function ($query) use($products) {
+        $query->whereIn('products.id', $products);
+      })->pluck('name', 'slug');
+
+      $ages = Age::whereHas('products', function ($query) use($products) {
+        $query->whereIn('products.id', $products);
+      })->pluck('age', 'id');
+
       $map = [
           'genders' => ['u' => 'Унисекс', 'm' => 'Мальчики', 'f' => 'Девочки'],
-          'brands' => Brand::pluck('name', 'slug'),
-          'ages' => Age::pluck('age', 'id'),
+          'brands' => $brands,
+          'ages' => $ages,
       ];
       return $map;
     }

@@ -1,5 +1,5 @@
 <div class="tile is-child box">
-  <article class="tile is-child">
+  <article class="tile is-child overlay-image">
     <!-- Put any content you want -->
     <figure class="image is-4by3">
       @if($category->getFirstMedia('categories'))
