@@ -166,7 +166,7 @@ a:hover {
   transition: .3s all;
   border-radius: 10px;
 
-  & .card-image img{
+  & .card-image img {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
   }
@@ -347,24 +347,25 @@ a:hover {
   color: #fff;
   transition: .3s all;
 }
+
 .button-pink:hover {
   background: rgb(253, 69, 186);
   color: #fff;
 }
 
 
-.dropdown-style{
+.dropdown-style {
   padding-top: 0;
   width: 100%;
 }
 
 
-.section__no-product{
+.section__no-product {
   width: 100%;
 }
 
 
-.not-found__container{
+.not-found__container {
   width: 100%;
   height: 60vh;
   display: flex;
@@ -372,33 +373,37 @@ a:hover {
   justify-content: center;
 }
 
-.overlay-image{
+.overlay-image {
   position: relative;
-  & > div{
+
+  &>a {
     position: absolute;
     opacity: 0;
-    transition:.3s all;
-
+    transition: .3s all;
     display: flex;
-      top: 0;
-      justify-content: center;
-    & > a{
+    top: 0;
+    justify-content: center;
+
+    &>p {
       display: none;
     }
   }
-  &:hover > div{
+
+  &:hover>a {
     opacity: 1;
-    border-radius:6px;
-      background: cadetblue;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      top: 0;
-      justify-content: center;
-      /* left: 40px; */
-      z-index: 2;
-      & > a{
-        display: block;
-      }
+    border-radius: 6px;
+    background: #3969D3;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    top: 0;
+    justify-content: center;
+    /* left: 40px; */
+    z-index: 2;
+
+    &>p {
+      display: block;
+    }
   }
 }

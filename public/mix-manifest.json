@@ -1,11 +1,11 @@
 {
     "/js/order-modal.js": "/js/order-modal.js",
     "/js/contact-us.js": "/js/contact-us.js",
+    "/js/product-swiper.js": "/js/product-swiper.js",
+    "/js/brand-swiper.js": "/js/brand-swiper.js",
     "/js/search-dropdown.js": "/js/search-dropdown.js",
     "/js/sort-dropdown.js": "/js/sort-dropdown.js",
-    "/js/product-swiper.js": "/js/product-swiper.js",
     "/js/filters.js": "/js/filters.js",
-    "/js/brand-swiper.js": "/js/brand-swiper.js",
     "/js/vendor.js": "/js/vendor.js",
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
