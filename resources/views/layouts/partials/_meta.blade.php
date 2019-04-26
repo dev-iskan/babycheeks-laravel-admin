@@ -17,7 +17,6 @@
     <meta property="og:title" content="{{$title}} - Интернет каталог детских вещей от ведущих брендов" />
     <meta property="og:description" content="Интернет каталог детских вещей от ведущих брендов" />
     <meta property="og:image" content="{{asset('img/og-logo.png')}}" />
-    <meta property="og:image_secure" content="{{asset('img/og-logo.png')}}" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139135663-1"></script>
