@@ -8,7 +8,7 @@
       <img src="{{asset('img/default.png')}}" alt="logo">
       @endif
     </figure>
-    <a href="" class="d-flex flex-column-nowrap">
+    <a href="{{route('category', $category)}}" class="d-flex flex-column-nowrap">
       <p class="is-size-3 has-text-weight-semibold">{{$category->name}}</p>
     </a>
   </article>
