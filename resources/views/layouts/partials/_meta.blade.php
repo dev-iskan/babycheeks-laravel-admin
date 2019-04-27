@@ -27,6 +27,8 @@
 
       gtag('config', 'UA-139135663-1');
     </script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit" async defer>
+    </script>
     {{-- Styles --}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('styles')

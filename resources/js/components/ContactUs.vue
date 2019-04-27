@@ -47,7 +47,13 @@
         v-model="form.text"
         ></textarea>
       </div>
-
+      <vue-recaptcha
+          ref="recaptcha"
+          @verify="onCaptchaVerified"
+          @expired="resetCaptcha"
+          size="invisible"
+          :sitekey="sitekey">
+      </vue-recaptcha>
       <button type="submit" class="button button-pink mh-3" :class="{'is-loading' : loading}">Отправить</button>
     </form>
   </div>
@@ -65,6 +71,8 @@
     'phoneRegExp',
     /^\+998\d{2}\s\d{3}-\d{2}-\d{2}$/
   )
+  import VueRecaptcha from 'vue-recaptcha'
+
   export default {
     data() {
       return {
@@ -93,17 +101,20 @@
     directives: {
       mask
     },
+    components: {
+      VueRecaptcha
+    },
+    props:{
+      sitekey: {
+        required: true
+      }
+    },
     methods: {
       submit() {
         this.$v.form.$touch()
         if (!this.$v.$invalid) {
           this.loading = true
-          axios.post('/api/feedback', this.form)
-          .then(response => {
-            this.loading = false
-            this.showAlert(response.data.status)
-          })
-          .finally(() => {this.clearForm()})
+          this.$refs.recaptcha.execute()
         }
       },
       clearForm () {
@@ -119,12 +130,32 @@
           type: 'success',
           text
         })
+      },
+      onCaptchaVerified (token) {
+        this.resetCaptcha()
+        const form = {...this.form}
+        form['g-recaptcha-response'] = token
+        axios.post('/api/feedback', form)
+          .then(response => {
+            this.loading = false
+            this.showAlert(response.data.status)
+          })
+          .catch(err => {
+            this.loading = false
+            console.log(err)
+          })
+          .finally(() => {this.clearForm()})
+      },
+      resetCaptcha () {
+        this.$refs.recaptcha.reset()
       }
     }
   }
 
 </script>
 
-<style lang="scss" scoped>
-
+<style lang="scss">
+  .grecaptcha-badge {
+      visibility: hidden !important;
+  }
 </style>

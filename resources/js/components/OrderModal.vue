@@ -59,6 +59,13 @@
               </template>
             </div>
           </div>
+          <vue-recaptcha
+              ref="recaptcha"
+              @verify="onCaptchaVerified"
+              @expired="resetCaptcha"
+              size="invisible"
+              :sitekey="sitekey">
+          </vue-recaptcha>
           <div class="d-flex flex-end">
             <button type="submit" class="button button-pink text-center" :class="{'is-loading' : loading}">
               Отправить
@@ -84,6 +91,8 @@
     'phoneRegExp',
     /^\+998\d{2}\s\d{3}-\d{2}-\d{2}$/
   )
+  import VueRecaptcha from 'vue-recaptcha'
+
   export default {
     data () {
       return {
@@ -94,6 +103,18 @@
         visible: false,
         loading: false,
         root: document.documentElement
+      }
+    },
+    components: {
+      VueRecaptcha
+    },
+    props: {
+      slug: {
+        required: true,
+        type: String
+      },
+      sitekey: {
+        required: true
       }
     },
     validations: {
@@ -135,13 +156,7 @@
         this.$v.form.$touch()
         if (!this.$v.$invalid) {
           this.loading = true
-          axios.post('/api/order/butylka', this.form)
-          .then(response => {
-            this.loading = false
-            this.closeModal()
-            this.showAlert(response.data.status)
-          })
-          .finally(() => {this.clearForm()})
+          this.$refs.recaptcha.execute()
         }
       },
       clearForm () {
@@ -156,11 +171,32 @@
           type: 'success',
           text
         })
+      },
+      onCaptchaVerified (token) {
+        this.resetCaptcha()
+        const form = {...this.form}
+        form['g-recaptcha-response'] = token
+        axios.post(`/api/order/${this.slug}`, form)
+          .then(response => {
+            this.loading = false
+            this.closeModal()
+            this.showAlert(response.data.status)
+          })
+          .catch(err => {
+            this.loading = false
+            console.log(err)
+          })
+          .finally(() => {this.clearForm()})
+      },
+      resetCaptcha () {
+        this.$refs.recaptcha.reset()
       }
     }
   }
 </script>
 
-<style lang="scss" scoped>
-
+<style lang="scss">
+  .grecaptcha-badge {
+      visibility: hidden !important;
+  }
 </style>

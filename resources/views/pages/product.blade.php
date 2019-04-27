@@ -24,6 +24,10 @@
               <p class="title is-3">{{$product->name}}</p>
             </div>
 
+            <div class="description-part__cost">
+              <p class="is-size-4">{{$product->brand->name}}</p>
+            </div>
+
             <div class="description-part__cost mh-1">
               <p class="subtitle is-3">{{$product->formatted_price}}</p>
             </div>
@@ -58,8 +62,7 @@
               </p>
             </div>
             @endif
-
-            <order-modal></order-modal>
+            <order-modal slug="{{$product->slug}}"  sitekey="{{config('captcha.site_key')}}"></order-modal>
 
             <div class="description-part__product-description container-80 mh-1">
               {!!$product->description!!}

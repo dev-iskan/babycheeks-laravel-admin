@@ -26,7 +26,8 @@ class SendFeedbackRequest extends FormRequest
         return [
             'name' => 'required',
             'phone' => 'required',
-            'text' => 'required'
+            'text' => 'required',
+            'g-recaptcha-response' => 'required|captcha'
         ];
     }
 }

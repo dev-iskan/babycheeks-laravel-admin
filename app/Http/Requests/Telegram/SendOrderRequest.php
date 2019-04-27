@@ -25,7 +25,8 @@ class SendOrderRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:250',
-            'phone' => 'required|max:250'
+            'phone' => 'required|max:250',
+            'g-recaptcha-response' => 'required|captcha'
         ];
     }
 }

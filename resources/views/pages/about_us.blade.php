@@ -80,6 +80,6 @@
 
 
   </div>
-  <contact-us />
+  <contact-us sitekey="{{config('captcha.site_key')}}"/>
 </div>
 @endsection
