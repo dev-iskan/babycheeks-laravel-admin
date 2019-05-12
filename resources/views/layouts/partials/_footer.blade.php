@@ -14,7 +14,7 @@
                         <div class="social-media__icons">
                             <a href="https://t.me/babycheeks_uz"><img src="{{asset('img/social_media/telegram.png')}}" alt="tg"></a>
                             <a href="https://www.instagram.com/babycheeks_tashkent/"><img src="{{asset('img/social_media/insta.png')}}" alt="inst"></a>
-                            <a href="#"><img src="{{asset('img/social_media/facebook.png')}}" alt="facebook"></a>
+                            <a href="https://www.facebook.com/Baby-Cheeks-810321326003597/"><img src="{{asset('img/social_media/facebook.png')}}" alt="facebook"></a>
                         </div>
                     </div>
 

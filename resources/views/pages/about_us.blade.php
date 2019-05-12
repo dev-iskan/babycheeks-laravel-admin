@@ -64,7 +64,7 @@
                 «Babycheeks».</p>
             </div>
             <div class="facebook-card__link">
-              <a class="subtitle is-4" href="#">@babycheeks_tashkent</a>
+              <a class="subtitle is-4" href="https://www.facebook.com/Baby-Cheeks-810321326003597/">@babycheeks_tashkent</a>
             </div>
           </div>
         </div>
