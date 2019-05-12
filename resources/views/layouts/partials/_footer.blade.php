@@ -12,8 +12,8 @@
                     <div class="d-flex flex-column-nowrap">
                         <p class="mh-2">Свяжитесь с нами по нашим социальным сетям</p>
                         <div class="social-media__icons">
-                            <a href="#"><img src="{{asset('img/social_media/telegram.png')}}" alt="tg"></a>
-                            <a href="#"><img src="{{asset('img/social_media/insta.png')}}" alt="inst"></a>
+                            <a href="https://t.me/babycheeks_uz"><img src="{{asset('img/social_media/telegram.png')}}" alt="tg"></a>
+                            <a href="https://www.instagram.com/babycheeks_tashkent/"><img src="{{asset('img/social_media/insta.png')}}" alt="inst"></a>
                             <a href="#"><img src="{{asset('img/social_media/facebook.png')}}" alt="facebook"></a>
                         </div>
                     </div>
@@ -21,9 +21,8 @@
                     <div class="mh-1">
                         <ul class="d-flex flex-column-nowrap list-style-none">
                             <li>Если есть вопросы звоните</li>
-                            <li>+998 (90) 180 15 02</li>
-                            <li>+998 (90) 180 15 02</li>
-                            <li>Почта: <a href="#">babycheeks.tashkent@gmail.com</a></li>
+                            <li>+998 (99) 008-8998</li>
+                            <li>Почта: <a href="mailto:babycheeks.tashkent@gmail.com">babycheeks.tashkent@gmail.com</a></li>
                         </ul>
                     </div>
                 </div>
@@ -42,14 +41,12 @@
                     <div>
                         <p>Почему покупатели выбирают «BabyCheeks»</p>
                         <p class="is-size-6">Большой выбор одежды, обуви, игрушек и аксессуаров, доступные для
-                            заказа в любое
-                            время. Все товары имеются в наличии на наших складах и будут доставлены в любой
-                            город Узбекистана.</p>
+                            заказа в любое время.</p>
                     </div>
-                    <div>
+                    <div style="padding-top: 5px;">
                         <p>Всегда для вас:</p>
                         <ul class="is-size-6">
-                            <li>скидки до –50% каждый день;</li>
+                            <li>Детские товары из Америки;</li>
                             <li>бесплатная доставка по Ташкенту при оплате от 50 000 сум;</li>
                             <li>бесплатная примерка до 10 товаров в Ташкенте;</li>
                             <li>самая быстрая доставка по всей стране (6–48 часов);</li>

@@ -40,7 +40,7 @@
                 «Babycheeks».</p>
             </div>
             <div class="tg-card__link">
-              <a class="subtitle is-4" href="https://t.me/publictestgroup">@babycheeks_uz</a>
+              <a class="subtitle is-4" href="https://t.me/babycheeks_uz">@babycheeks_uz</a>
             </div>
           </div>
           <div class="insta-card column is-one-third text-center">
@@ -52,7 +52,7 @@
                 «Babycheeks».</p>
             </div>
             <div class="insta-card__link">
-              <a class="subtitle is-4" href="https://www.instagram.com/babycheeks_tashkent">@babycheeks_tashkent</a>
+              <a class="subtitle is-4" href="https://www.instagram.com/babycheeks_tashkent/">@babycheeks_tashkent</a>
             </div>
           </div>
           <div class="facebook-card column is-one-third text-center">
