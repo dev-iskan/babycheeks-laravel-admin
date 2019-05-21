@@ -1,4 +1,4 @@
-📦 — {{$name}}
+📦 — {!!$name!!}
 💯 — Бренд: {{$brand_name}}
 💰 — Цена: {{$formatted_price}}
 👶 — Пол: {{$formatted_gender}}

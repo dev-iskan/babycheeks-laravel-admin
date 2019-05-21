@@ -13,7 +13,7 @@
       </div>
       <div class="card-content pa-1">
         <p class="is-size-6">{{$product->name}}</p>
-        <p class="is-size-7">{{$product->brand->name}}</p>
+        <p class="is-size-7">{{$product->brand()->exists() ? $product->brand->name : ''}}</p>
         <p class="title is-6 text-right py-1">{{$product->formatted_price}}</p>
       </div>
     </div>

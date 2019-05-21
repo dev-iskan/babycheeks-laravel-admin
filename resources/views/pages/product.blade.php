@@ -25,7 +25,7 @@
             </div>
 
             <div class="description-part__cost">
-              <p class="is-size-4">{{$product->brand->name}}</p>
+              <p class="is-size-4">{{$product->brand()->exists() ? $product->brand->name : ''}}</p>
             </div>
 
             <div class="description-part__cost mh-1">

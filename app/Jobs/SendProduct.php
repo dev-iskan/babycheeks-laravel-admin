@@ -43,7 +43,7 @@ class SendProduct implements ShouldQueue
             'name' => $this->product->name,
             'ages' => $ages,
             'categories' => $categories,
-            'brand_name' => '#'.str_slug($this->product->brand->slug, '_'),
+            'brand_name' => '#'.str_slug($this->product->brand()->exists() ? $this->product->brand->slug : '_', '_'),
             'formatted_price' => $this->product->formatted_price,
             'formatted_gender' => $this->product->formatted_gender
         ])->render();
